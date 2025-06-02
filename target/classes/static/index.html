@@ -1,0 +1,2769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wakanda Social - Connect with the Kingdom</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        :root {
+            --wakanda-purple: #8B5CF6;
+            --wakanda-blue: #3B82F6;
+            --wakanda-gold: #F59E0B;
+            --wakanda-silver: #6B7280;
+            --wakanda-dark: #0F0F0F;
+            --wakanda-darker: #000000;
+            --wakanda-gray: #1F1F1F;
+            --wakanda-light-gray: #2A2A2A;
+            --wakanda-border: #333333;
+            --wakanda-text: #FFFFFF;
+            --wakanda-text-secondary: #9CA3AF;
+            --wakanda-success: #10B981;
+            --wakanda-error: #EF4444;
+            --wakanda-warning: #F59E0B;
+            --wakanda-notification: #E53935;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--wakanda-darker) 0%, var(--wakanda-dark) 50%, var(--wakanda-gray) 100%);
+            color: var(--wakanda-text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Wakanda Pattern Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                    radial-gradient(circle at 25% 25%, var(--wakanda-purple) 0%, transparent 50%),
+                    radial-gradient(circle at 75% 75%, var(--wakanda-blue) 0%, transparent 50%);
+            opacity: 0.03;
+            z-index: -1;
+            animation: wakandaFlow 20s ease-in-out infinite;
+        }
+
+        @keyframes wakandaFlow {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(180deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(20px);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid var(--wakanda-border);
+            border-right: 1px solid var(--wakanda-border);
+            position: relative;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--wakanda-purple) 0%, var(--wakanda-blue) 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            animation: logoGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes logoGlow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+            font-size: 14px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .nav-btn:hover::before {
+            left: 100%;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(45deg, var(--wakanda-gold), #FFA500);
+            color: var(--wakanda-dark);
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Auth Forms */
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            padding: 40px;
+            background: radial-gradient(circle at center, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+        }
+
+        .auth-form {
+            background: rgba(31, 31, 31, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow:
+                    0 25px 50px rgba(0, 0, 0, 0.5),
+                    0 0 0 1px rgba(139, 92, 246, 0.2);
+            width: 100%;
+            max-width: 400px;
+            animation: authSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auth-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--wakanda-purple), var(--wakanda-blue), var(--wakanda-gold));
+            animation: shimmer 2s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        @keyframes authSlideIn {
+            from {
+                transform: translateY(50px) scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .auth-form h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--wakanda-text);
+            font-weight: 700;
+            font-size: 1.8rem;
+            background: linear-gradient(45deg, var(--wakanda-purple), var(--wakanda-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .form-group:nth-child(2) { animation-delay: 0.1s; }
+        .form-group:nth-child(3) { animation-delay: 0.2s; }
+        .form-group:nth-child(4) { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--wakanda-text-secondary);
+            font-size: 14px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid var(--wakanda-border);
+            border-radius: 12px;
+            font-size: 16px;
+            background: rgba(42, 42, 42, 0.8);
+            color: var(--wakanda-text);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--wakanda-purple);
+            box-shadow:
+                    0 0 0 3px rgba(139, 92, 246, 0.1),
+                    0 8px 25px rgba(139, 92, 246, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--wakanda-purple) 0%, var(--wakanda-blue) 100%);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--wakanda-silver) 0%, var(--wakanda-light-gray) 100%);
+            margin-top: 12px;
+            box-shadow: 0 8px 25px rgba(107, 114, 128, 0.3);
+        }
+
+        .btn-small {
+            padding: 10px 20px;
+            font-size: 14px;
+            width: auto;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex: 1;
+            animation: contentSlideIn 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes contentSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .sidebar {
+            width: 280px;
+            background: rgba(31, 31, 31, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 24px;
+            border-right: 1px solid var(--wakanda-border);
+            animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .content-area {
+            flex: 1;
+            padding: 24px;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .right-sidebar {
+            width: 320px;
+            background: rgba(31, 31, 31, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 24px;
+            border-left: 1px solid var(--wakanda-border);
+            animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* User Profile */
+        .user-profile {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            backdrop-filter: blur(20px);
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: profileSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes profileSlideIn {
+            from {
+                transform: translateY(30px) scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .user-profile:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+        }
+
+        .user-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--wakanda-purple), var(--wakanda-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+            animation: avatarPulse 3s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .user-avatar::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: avatarShine 3s linear infinite;
+        }
+
+        @keyframes avatarPulse {
+            0%, 100% { box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4); }
+            50% { box-shadow: 0 12px 35px rgba(139, 92, 246, 0.6); }
+        }
+
+        @keyframes avatarShine {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .user-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--wakanda-text);
+            margin-bottom: 4px;
+            transition: color 0.3s ease;
+        }
+
+        .user-name:hover {
+            color: var(--wakanda-purple);
+        }
+
+        .user-username {
+            color: var(--wakanda-text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .user-bio {
+            color: var(--wakanda-text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 16px;
+        }
+
+        .user-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 16px;
+        }
+
+        .stat {
+            text-align: center;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stat:hover {
+            transform: scale(1.1);
+        }
+
+        .stat-number {
+            font-weight: 800;
+            font-size: 1.4rem;
+            background: linear-gradient(45deg, var(--wakanda-purple), var(--wakanda-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--wakanda-text-secondary);
+            font-weight: 500;
+        }
+
+        /* Search */
+        .search-container {
+            margin-bottom: 24px;
+            animation: searchSlideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes searchSlideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid var(--wakanda-border);
+            border-radius: 25px;
+            font-size: 16px;
+            background: rgba(42, 42, 42, 0.8);
+            color: var(--wakanda-text);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .search-input:focus {
+            border-color: var(--wakanda-purple);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+            transform: scale(1.02);
+        }
+
+        /* Post Form */
+        .post-form {
+            background: rgba(31, 31, 31, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            border: 1px solid var(--wakanda-border);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: postFormSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes postFormSlideIn {
+            from {
+                transform: translateY(30px) scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .post-form:hover {
+            border-color: rgba(139, 92, 246, 0.3);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.1);
+        }
+
+        .post-textarea {
+            width: 100%;
+            min-height: 120px;
+            border: none;
+            resize: vertical;
+            font-size: 18px;
+            font-family: inherit;
+            background: transparent;
+            color: var(--wakanda-text);
+            line-height: 1.5;
+        }
+
+        .post-textarea:focus {
+            outline: none;
+        }
+
+        .post-textarea::placeholder {
+            color: var(--wakanda-text-secondary);
+        }
+
+        .post-form-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--wakanda-border);
+        }
+
+        .char-counter {
+            font-size: 14px;
+            color: var(--wakanda-text-secondary);
+            font-weight: 500;
+        }
+
+        .char-counter.warning {
+            color: var(--wakanda-warning);
+        }
+
+        .char-counter.danger {
+            color: var(--wakanda-error);
+        }
+
+        /* Posts */
+        .posts-container {
+            max-height: 70vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--wakanda-purple) transparent;
+        }
+
+        .posts-container::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .posts-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .posts-container::-webkit-scrollbar-thumb {
+            background: var(--wakanda-purple);
+            border-radius: 3px;
+        }
+
+        .post {
+            background: rgba(31, 31, 31, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+            border: 1px solid var(--wakanda-border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: postSlideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .post::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--wakanda-purple), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .post:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes postSlideIn {
+            from {
+                transform: translateY(30px) scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .post:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .post-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--wakanda-purple), var(--wakanda-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 12px;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .post-avatar:hover {
+            transform: scale(1.1);
+        }
+
+        .post-user-info {
+            flex: 1;
+        }
+
+        .post-username {
+            font-weight: 600;
+            color: var(--wakanda-text);
+            margin-bottom: 2px;
+            transition: color 0.3s ease;
+        }
+
+        .post-username:hover {
+            color: var(--wakanda-purple);
+        }
+
+        .post-time {
+            color: var(--wakanda-text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .post-content {
+            color: var(--wakanda-text);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 24px;
+            padding-top: 16px;
+            border-top: 1px solid var(--wakanda-border);
+        }
+
+        .post-action {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: none;
+            border: none;
+            color: var(--wakanda-text-secondary);
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .post-action:hover {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--wakanda-purple);
+            transform: scale(1.05);
+        }
+
+        .post-action.liked {
+            color: var(--wakanda-error);
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .post-action.liked:hover {
+            background: rgba(239, 68, 68, 0.2);
+        }
+
+        /* Comments */
+        .comments-section {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--wakanda-border);
+            animation: commentsSlideIn 0.5s ease-out;
+        }
+
+        @keyframes commentsSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .comment {
+            background: rgba(42, 42, 42, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .comment:hover {
+            background: rgba(42, 42, 42, 0.8);
+            border-color: rgba(139, 92, 246, 0.2);
+            transform: translateX(4px);
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .comment-username {
+            font-weight: 600;
+            color: var(--wakanda-purple);
+            font-size: 0.9rem;
+        }
+
+        .comment-time {
+            color: var(--wakanda-text-secondary);
+            font-size: 0.8rem;
+        }
+
+        .comment-content {
+            color: var(--wakanda-text);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .comment-form {
+            display: flex;
+            gap: 12px;
+            margin-top: 12px;
+            animation: commentFormSlideIn 0.4s ease-out;
+        }
+
+        @keyframes commentFormSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .comment-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid var(--wakanda-border);
+            border-radius: 20px;
+            font-size: 14px;
+            background: rgba(42, 42, 42, 0.8);
+            color: var(--wakanda-text);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .comment-input:focus {
+            border-color: var(--wakanda-purple);
+            box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.1);
+        }
+
+        /* Users List */
+        .users-list {
+            background: rgba(31, 31, 31, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid var(--wakanda-border);
+            animation: usersListSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes usersListSlideIn {
+            from {
+                transform: translateY(30px) scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .users-list h3 {
+            color: var(--wakanda-text);
+            margin-bottom: 20px;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--wakanda-purple), var(--wakanda-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .user-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--wakanda-border);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: userItemSlideIn 0.5s ease-out;
+        }
+
+        @keyframes userItemSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .user-item:last-child {
+            border-bottom: none;
+        }
+
+        .user-item:hover {
+            background: rgba(139, 92, 246, 0.05);
+            transform: translateX(4px);
+            border-radius: 12px;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .user-item-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--wakanda-purple), var(--wakanda-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 16px;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .user-item-avatar:hover {
+            transform: scale(1.1);
+        }
+
+        .user-item-info {
+            flex: 1;
+        }
+
+        .user-item-name {
+            font-weight: 600;
+            color: var(--wakanda-text);
+            margin-bottom: 2px;
+        }
+
+        .user-item-username {
+            color: var(--wakanda-text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .follow-btn {
+            background: linear-gradient(135deg, var(--wakanda-purple), var(--wakanda-blue));
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .follow-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+        }
+
+        .follow-btn.following {
+            background: linear-gradient(135deg, var(--wakanda-silver), var(--wakanda-light-gray));
+            box-shadow: 0 4px 15px rgba(107, 114, 128, 0.3);
+        }
+
+        /* Messages */
+        .message {
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 16px 0;
+            font-weight: 500;
+            animation: messageSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes messageSlideIn {
+            from {
+                transform: translateY(-20px) scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .message.error {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--wakanda-error);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        .message.success {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--wakanda-success);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--wakanda-text-secondary);
+        }
+
+        .spinner {
+            border: 3px solid rgba(139, 92, 246, 0.1);
+            border-top: 3px solid var(--wakanda-purple);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Messages Styles */
+        .messages-container {
+            display: flex;
+            height: 70vh;
+            gap: 20px;
+        }
+
+        .conversations-list {
+            width: 350px;
+            background: rgba(31, 31, 31, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid var(--wakanda-border);
+        }
+
+        .conversation-item {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
+        }
+
+        .conversation-item:hover {
+            background: rgba(139, 92, 246, 0.1);
+            border-color: rgba(139, 92, 246, 0.3);
+            transform: translateX(4px);
+        }
+
+        .conversation-item.active {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2));
+            border-color: var(--wakanda-purple);
+        }
+
+        .conversation-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--wakanda-purple), var(--wakanda-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 16px;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .conversation-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .conversation-name {
+            font-weight: 600;
+            color: var(--wakanda-text);
+            margin-bottom: 4px;
+        }
+
+        .conversation-last-message {
+            color: var(--wakanda-text-secondary);
+            font-size: 0.9rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .conversation-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+
+        .conversation-time {
+            color: var(--wakanda-text-secondary);
+            font-size: 0.8rem;
+        }
+
+        .unread-badge {
+            background: linear-gradient(135deg, var(--wakanda-error), #dc2626);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .online-indicator {
+            width: 12px;
+            height: 12px;
+            background: var(--wakanda-success);
+            border-radius: 50%;
+            border: 2px solid var(--wakanda-dark);
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            animation: onlinePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes onlinePulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .chat-area {
+            flex: 1;
+            background: rgba(31, 31, 31, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            border: 1px solid var(--wakanda-border);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--wakanda-border);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .chat-user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--wakanda-purple), var(--wakanda-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            position: relative;
+        }
+
+        .chat-username {
+            font-weight: 600;
+            color: var(--wakanda-text);
+        }
+
+        .chat-status {
+            color: var(--wakanda-success);
+            font-size: 0.8rem;
+        }
+
+        .chat-status.offline {
+            color: var(--wakanda-text-secondary);
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .message-item {
+            display: flex;
+            margin-bottom: 16px;
+            animation: messageSlideIn 0.3s ease-out;
+        }
+
+        .message-item.sent {
+            justify-content: flex-end;
+        }
+
+        .message-bubble {
+            max-width: 70%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            position: relative;
+            word-wrap: break-word;
+        }
+
+        .message-bubble.sent {
+            background: linear-gradient(135deg, var(--wakanda-purple), var(--wakanda-blue));
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message-bubble.received {
+            background: rgba(42, 42, 42, 0.8);
+            color: var(--wakanda-text);
+            border-bottom-left-radius: 4px;
+            border: 1px solid var(--wakanda-border);
+        }
+
+        .message-time {
+            font-size: 0.7rem;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        .chat-input-container {
+            padding: 20px 24px;
+            border-top: 1px solid var(--wakanda-border);
+            display: flex;
+            gap: 12px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid var(--wakanda-border);
+            border-radius: 20px;
+            font-size: 14px;
+            background: rgba(42, 42, 42, 0.8);
+            color: var(--wakanda-text);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .chat-input:focus {
+            border-color: var(--wakanda-purple);
+            box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-content {
+                flex-direction: column;
+            }
+
+            .sidebar, .right-sidebar {
+                width: 100%;
+                order: 2;
+            }
+
+            .content-area {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 16px;
+                padding: 16px;
+            }
+
+            .nav-buttons {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+
+            .sidebar, .right-sidebar {
+                padding: 16px;
+            }
+
+            .content-area {
+                padding: 16px;
+            }
+
+            .post-form, .post {
+                padding: 16px;
+            }
+
+            .messages-container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .conversations-list {
+                width: 100%;
+            }
+
+            .chat-area {
+                height: 60vh;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: tabSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes tabSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Auto-refresh indicator */
+        .refresh-indicator {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--wakanda-purple), var(--wakanda-blue));
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            z-index: 1000;
+            animation: slideInRight 0.3s ease-out;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Notification Styles */
+        .notification-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: var(--wakanda-notification);
+            color: white;
+            border-radius: 50%;
+            padding: 4px 6px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            z-index: 1;
+        }
+
+        .notification-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--wakanda-border);
+            transition: background-color 0.3s ease;
+        }
+
+        .notification-item:last-child {
+            border-bottom: none;
+        }
+
+        .notification-item:hover {
+            background-color: rgba(139, 92, 246, 0.1);
+        }
+
+        .notification-content {
+            flex: 1;
+            margin-left: 12px;
+        }
+
+        .notification-time {
+            font-size: 0.8rem;
+            color: var(--wakanda-text-secondary);
+        }
+
+        .notification-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .notification-mark-as-read {
+            background: none;
+            border: none;
+            color: var(--wakanda-text-secondary);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .notification-mark-as-read:hover {
+            color: var(--wakanda-purple);
+        }
+
+        .notification-list {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            width: 300px;
+            background-color: rgba(31, 31, 31, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            border: 1px solid var(--wakanda-border);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .notification-list h3 {
+            padding: 12px 16px;
+            margin: 0;
+            color: var(--wakanda-text);
+            font-size: 1rem;
+            font-weight: 600;
+            border-bottom: 1px solid var(--wakanda-border);
+        }
+
+        .notification-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .no-notifications {
+            padding: 16px;
+            text-align: center;
+            color: var(--wakanda-text-secondary);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">⚡ Wakanda Social</div>
+        <div class="nav-buttons">
+            <button class="nav-btn" id="homeBtn">🏠 Home</button>
+            <button class="nav-btn" id="messagesBtn">💬 Messages</button>
+            <button class="nav-btn" id="searchBtn">🔍 Search</button>
+            <button class="nav-btn" id="profileBtn">👤 Profile</button>
+            <button class="nav-btn" id="logoutBtn">🚪 Logout</button>
+            <div class="notification-bell" id="notificationBell">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count" id="notificationCount">0</span>
+                <div class="notification-list hidden" id="notificationList">
+                    <h3>Notifications</h3>
+                    <ul id="notifications">
+                        <li class="no-notifications">No new notifications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Container (shown when not logged in) -->
+    <div class="auth-container" id="authContainer">
+        <div class="auth-form">
+            <div id="loginForm">
+                <h2>Welcome to Wakanda</h2>
+                <div class="form-group">
+                    <label for="loginUsername">Username or Email:</label>
+                    <input type="text" id="loginUsername" placeholder="Enter your credentials">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password">
+                </div>
+                <button class="btn" id="loginBtn">Enter the Kingdom</button>
+                <button class="btn btn-secondary" id="showRegisterBtn">Join Wakanda</button>
+            </div>
+
+            <div id="registerForm" class="hidden">
+                <h2>Join the Kingdom</h2>
+                <div class="form-group">
+                    <label for="registerUsername">Choose Your Name:</label>
+                    <input type="text" id="registerUsername" placeholder="Your warrior name">
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email:</label>
+                    <input type="email" id="registerEmail" placeholder="Your communication channel">
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Secret Code:</label>
+                    <input type="password" id="registerPassword" placeholder="Create your secret code">
+                </div>
+                <button class="btn" id="registerBtn">Become a Citizen</button>
+                <button class="btn btn-secondary" id="showLoginBtn">Return to Login</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content (shown when logged in) -->
+    <div class="main-content hidden" id="mainContent">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="user-profile" id="userProfile">
+                <div class="user-avatar" id="userAvatar">W</div>
+                <div class="user-name" id="userName">Loading...</div>
+                <div class="user-username" id="userUsername">@wakandan</div>
+                <div class="user-bio" id="userBio"></div>
+                <div class="user-stats">
+                    <div class="stat">
+                        <div class="stat-number" id="postsCount">0</div>
+                        <div class="stat-label">Posts</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" id="followersCount">0</div>
+                        <div class="stat-label">Followers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" id="followingCount">0</div>
+                        <div class="stat-label">Following</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- Home Tab -->
+            <div class="tab-content active" id="homeTab">
+                <!-- Post Form -->
+                <div class="post-form">
+                    <textarea class="post-textarea" id="postContent" placeholder="What's happening in Wakanda?"></textarea>
+                    <div class="post-form-footer">
+                        <div class="char-counter" id="charCounter">0/280</div>
+                        <button class="btn btn-small" id="postBtn" disabled>Share with Kingdom</button>
+                    </div>
+                </div>
+
+                <!-- Posts Feed -->
+                <div id="postsContainer">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <p>Loading the kingdom's wisdom...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Tab -->
+            <div class="tab-content" id="searchTab">
+                <div class="search-container">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search the kingdom for wisdom and warriors...">
+                </div>
+                <div id="searchResults">
+                    <p style="text-align: center; color: var(--wakanda-text-secondary); padding: 40px;">
+                        🔍 Enter your search to explore Wakanda's knowledge
+                    </p>
+                </div>
+            </div>
+
+            <!-- Messages Tab -->
+            <div class="tab-content" id="messagesTab">
+                <div class="messages-container">
+                    <div class="conversations-list">
+                        <h3 style="margin-bottom: 20px; color: var(--wakanda-text);">💬 Your Conversations</h3>
+                        <div id="conversationsList">
+                            <div class="loading">
+                                <div class="spinner"></div>
+                                <p>Loading conversations...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-area hidden" id="chatArea">
+                        <div class="chat-header" id="chatHeader">
+                            <button class="btn btn-small" id="backToConversations">← Back</button>
+                            <div class="chat-user-info">
+                                <div class="chat-avatar" id="chatAvatar">W</div>
+                                <div>
+                                    <div class="chat-username" id="chatUsername">Select a conversation</div>
+                                    <div class="chat-status" id="chatStatus">Online</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="loading">
+                                <div class="spinner"></div>
+                                <p>Loading messages...</p>
+                            </div>
+                        </div>
+                        <div class="chat-input-container">
+                            <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
+                            <button class="btn btn-small" id="sendMessageBtn">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Tab -->
+            <div class="tab-content" id="profileTab">
+                <div class="post-form">
+                    <h3 style="margin-bottom: 20px; color: var(--wakanda-text);">✨ Enhance Your Profile</h3>
+                    <div class="form-group">
+                        <label for="editDisplayName">Display Name:</label>
+                        <input type="text" id="editDisplayName" placeholder="Your royal title">
+                    </div>
+                    <div class="form-group">
+                        <label for="editBio">Bio:</label>
+                        <textarea id="editBio" placeholder="Tell Wakanda about your journey..." rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-small" id="updateProfileBtn">Update Royal Profile</button>
+                </div>
+
+                <div id="userPostsContainer">
+                    <h3 style="margin-bottom: 20px; color: var(--wakanda-text);">📜 Your Chronicles</h3>
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <p>Loading your chronicles...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="right-sidebar">
+            <div class="users-list">
+                <h3>🌟 Kingdom Citizens</h3>
+                <div id="suggestedUsers">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <p>Finding fellow warriors...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Messages -->
+    <div id="messages"></div>
+</div>
+
+<script>
+    class WakandaSocial {
+        constructor() {
+            this.baseUrl = 'http://localhost:8080';
+            this.token = localStorage.getItem('wakanda_token');
+            this.currentUser = JSON.parse(localStorage.getItem('wakanda_user') || 'null');
+            this.currentTab = 'home';
+            this.currentChatUser = null;
+            this.autoRefreshInterval = null;
+            this.messageRefreshInterval = null;
+            this.init();
+        }
+
+        async init() {
+            this.setupEventListeners();
+
+            if (this.token && this.currentUser) {
+                await this.showMainContent();
+                this.startAutoRefresh();
+            } else {
+                this.showAuthContainer();
+            }
+        }
+
+        setupEventListeners() {
+            // Auth form listeners
+            document.getElementById('showRegisterBtn').addEventListener('click', () => this.showRegisterForm());
+            document.getElementById('showLoginBtn').addEventListener('click', () => this.showLoginForm());
+            document.getElementById('loginBtn').addEventListener('click', () => this.login());
+            document.getElementById('registerBtn').addEventListener('click', () => this.register());
+
+            // Navigation listeners
+            document.getElementById('homeBtn').addEventListener('click', () => this.showTab('home'));
+            document.getElementById('messagesBtn').addEventListener('click', () => this.showTab('messages'));
+            document.getElementById('searchBtn').addEventListener('click', () => this.showTab('search'));
+            document.getElementById('profileBtn').addEventListener('click', () => this.showTab('profile'));
+            document.getElementById('logoutBtn').addEventListener('click', () => this.logout());
+
+            // Post form listeners
+            const postContent = document.getElementById('postContent');
+            const postBtn = document.getElementById('postBtn');
+
+            postContent.addEventListener('input', () => {
+                this.updateCharCounter();
+                this.validatePostForm();
+            });
+
+            postBtn.addEventListener('click', () => this.createPost());
+
+            // Search listener with debounce
+            let searchTimeout;
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    if (e.target.value.trim()) {
+                        this.search(e.target.value.trim());
+                    } else {
+                        document.getElementById('searchResults').innerHTML =
+                            '<p style="text-align: center; color: var(--wakanda-text-secondary); padding: 40px;">🔍 Enter your search to explore Wakanda\'s knowledge</p>';
+                    }
+                }, 300);
+            });
+
+            // Profile update listener
+            document.getElementById('updateProfileBtn').addEventListener('click', () => this.updateProfile());
+
+            // Enter key listeners
+            document.getElementById('loginPassword').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') this.login();
+            });
+
+            document.getElementById('registerPassword').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') this.register();
+            });
+
+            // Messages listeners
+            document.getElementById('backToConversations').addEventListener('click', () => this.showConversationsList());
+            document.getElementById('sendMessageBtn').addEventListener('click', () => this.sendMessage());
+            document.getElementById('chatInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') this.sendMessage();
+            });
+
+            // Notification bell listener
+            document.getElementById('notificationBell').addEventListener('click', () => this.toggleNotifications());
+        }
+
+        showAuthContainer() {
+            document.getElementById('authContainer').classList.remove('hidden');
+            document.getElementById('mainContent').classList.add('hidden');
+        }
+
+        async showMainContent() {
+            document.getElementById('authContainer').classList.add('hidden');
+            document.getElementById('mainContent').classList.remove('hidden');
+
+            await this.loadUserProfile();
+            await this.loadFeed();
+            await this.loadSuggestedUsers();
+            await this.loadUserPosts();
+        }
+
+        showRegisterForm() {
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('registerForm').classList.remove('hidden');
+        }
+
+        showLoginForm() {
+            document.getElementById('registerForm').classList.add('hidden');
+            document.getElementById('loginForm').classList.remove('hidden');
+        }
+
+        showTab(tabName) {
+            // Update navigation
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabName + 'Btn').classList.add('active');
+
+            // Update content
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabName + 'Tab').classList.add('active');
+
+            this.currentTab = tabName;
+
+            // Load tab-specific content
+            if (tabName === 'home') {
+                this.loadFeed();
+            } else if (tabName === 'profile') {
+                this.loadUserProfile();
+                this.loadUserPosts();
+            } else if (tabName === 'messages') {
+                this.loadConversations();
+                this.showConversationsList();
+            }
+        }
+
+        async login() {
+            const username = document.getElementById('loginUsername').value.trim();
+            const password = document.getElementById('loginPassword').value;
+
+            if (!username || !password) {
+                this.showMessage('Please fill in all fields, warrior!', 'error');
+                return;
+            }
+
+            const loginBtn = document.getElementById('loginBtn');
+            loginBtn.textContent = 'Entering Kingdom...';
+            loginBtn.disabled = true;
+
+            try {
+                const response = await fetch(`${this.baseUrl}/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        usernameOrEmail: username,
+                        password: password
+                    })
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.message || 'Access denied to the kingdom');
+                }
+
+                const data = await response.json();
+                this.token = data.token;
+                this.currentUser = data.user;
+
+                localStorage.setItem('wakanda_token', this.token);
+                localStorage.setItem('wakanda_user', JSON.stringify(this.currentUser));
+
+                this.showMessage('Welcome to Wakanda! 🌟', 'success');
+                await this.showMainContent();
+                this.startAutoRefresh();
+
+            } catch (error) {
+                console.error('Login error:', error);
+                this.showMessage(error.message, 'error');
+            } finally {
+                loginBtn.textContent = 'Enter the Kingdom';
+                loginBtn.disabled = false;
+            }
+        }
+
+        async register() {
+            const username = document.getElementById('registerUsername').value.trim();
+            const email = document.getElementById('registerEmail').value.trim();
+            const password = document.getElementById('registerPassword').value;
+
+            if (!username || !email || !password) {
+                this.showMessage('All fields are required to join Wakanda!', 'error');
+                return;
+            }
+
+            if (password.length < 6) {
+                this.showMessage('Your secret code must be at least 6 characters', 'error');
+                return;
+            }
+
+            const registerBtn = document.getElementById('registerBtn');
+            registerBtn.textContent = 'Joining Kingdom...';
+            registerBtn.disabled = true;
+
+            try {
+                const response = await fetch(`${this.baseUrl}/auth/register`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        username: username,
+                        email: email,
+                        password: password
+                    })
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.message || 'Failed to join the kingdom');
+                }
+
+                const data = await response.json();
+                this.token = data.token;
+                this.currentUser = data.user;
+
+                localStorage.setItem('wakanda_token', this.token);
+                localStorage.setItem('wakanda_user', JSON.stringify(this.currentUser));
+
+                this.showMessage('Welcome, new citizen of Wakanda! 🎉', 'success');
+                await this.showMainContent();
+                this.startAutoRefresh();
+
+            } catch (error) {
+                console.error('Registration error:', error);
+                this.showMessage(error.message, 'error');
+            } finally {
+                registerBtn.textContent = 'Become a Citizen';
+                registerBtn.disabled = false;
+            }
+        }
+
+        logout() {
+            this.token = null;
+            this.currentUser = null;
+            localStorage.removeItem('wakanda_token');
+            localStorage.removeItem('wakanda_user');
+
+            // Clear forms
+            document.getElementById('loginUsername').value = '';
+            document.getElementById('loginPassword').value = '';
+            document.getElementById('registerUsername').value = '';
+            document.getElementById('registerEmail').value = '';
+            document.getElementById('registerPassword').value = '';
+
+            this.stopAutoRefresh();
+            this.showAuthContainer();
+            this.showMessage('Farewell, warrior. Wakanda awaits your return! 👋', 'success');
+        }
+
+        async loadUserProfile() {
+            if (!this.currentUser) return;
+
+            try {
+                const response = await this.fetchWithAuth(`/users/${this.currentUser.id}`);
+                const user = await response.json();
+
+                const avatar = document.getElementById('userAvatar');
+                avatar.textContent = (user.displayName || user.username).charAt(0).toUpperCase();
+
+                document.getElementById('userName').textContent = user.displayName || user.username;
+                document.getElementById('userUsername').textContent = `@${user.username}`;
+                document.getElementById('userBio').textContent = user.bio || 'A proud citizen of Wakanda';
+
+                document.getElementById('postsCount').textContent = user.postsCount || 0;
+                document.getElementById('followersCount').textContent = user.followersCount || 0;
+                document.getElementById('followingCount').textContent = user.followingCount || 0;
+
+                // Update profile edit form
+                document.getElementById('editDisplayName').value = user.displayName || '';
+                document.getElementById('editBio').value = user.bio || '';
+
+            } catch (error) {
+                console.error('Error loading user profile:', error);
+            }
+        }
+
+        async loadFeed() {
+            try {
+                document.getElementById('postsContainer').innerHTML = `
+                        <div class="loading">
+                            <div class="spinner"></div>
+                            <p>Loading the kingdom's wisdom...</p>
+                        </div>
+                    `;
+
+                const response = await this.fetchWithAuth('/posts/feed');
+                const posts = await response.json();
+
+                this.displayPosts(posts, 'postsContainer');
+
+            } catch (error) {
+                console.error('Error loading feed:', error);
+                document.getElementById('postsContainer').innerHTML = `
+                        <div class="message error">Failed to load the kingdom's wisdom</div>
+                    `;
+            }
+        }
+
+        async loadUserPosts() {
+            if (!this.currentUser) return;
+
+            try {
+                const container = document.getElementById('userPostsContainer');
+                const loadingDiv = container.querySelector('.loading');
+                if (loadingDiv) {
+                    loadingDiv.innerHTML = `
+                            <div class="spinner"></div>
+                            <p>Loading your chronicles...</p>
+                        `;
+                }
+
+                const response = await this.fetchWithAuth(`/posts/user/${this.currentUser.id}`);
+                const posts = await response.json();
+
+                // Remove loading and add posts
+                if (loadingDiv) {
+                    loadingDiv.remove();
+                }
+
+                const postsHtml = posts.length > 0 ?
+                    posts.map(post => this.createPostHTML(post, true)).join('') :
+                    '<p style="text-align: center; color: var(--wakanda-text-secondary); padding: 40px;">📜 Your chronicles await your first story</p>';
+
+                const existingPosts = container.querySelector('.posts-list');
+                if (existingPosts) {
+                    existingPosts.innerHTML = postsHtml;
+                } else {
+                    container.innerHTML += `<div class="posts-list">${postsHtml}</div>`;
+                }
+
+            } catch (error) {
+                console.error('Error loading user posts:', error);
+            }
+        }
+
+        async loadSuggestedUsers() {
+            try {
+                const response = await this.fetchWithAuth('/users');
+                const users = await response.json();
+
+                const suggestedUsers = users.filter(user => user.id !== this.currentUser.id).slice(0, 5);
+
+                const usersHtml = suggestedUsers.map(user => `
+                        <div class="user-item">
+                            <div class="user-item-avatar">${(user.displayName || user.username).charAt(0).toUpperCase()}</div>
+                            <div class="user-item-info">
+                                <div class="user-item-name">${user.displayName || user.username}</div>
+                                <div class="user-item-username">@${user.username}</div>
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="btn btn-small" onclick="app.startChat(${user.id}, '${user.username}', '${user.displayName || user.username}')"
+                                        style="background: linear-gradient(135deg, var(--wakanda-gold), #FFA500); padding: 6px 12px;">
+                                    💬
+                                </button>
+                                <button class="follow-btn ${user.isFollowing ? 'following' : ''}"
+                                        onclick="app.toggleFollow(${user.id}, this)">
+                                    ${user.isFollowing ? 'Following' : 'Follow'}
+                                </button>
+                            </div>
+                        </div>
+                    `).join('');
+
+                document.getElementById('suggestedUsers').innerHTML = usersHtml;
+
+            } catch (error) {
+                console.error('Error loading suggested users:', error);
+                document.getElementById('suggestedUsers').innerHTML = `
+                        <div class="message error">Failed to find fellow warriors</div>
+                    `;
+            }
+        }
+
+        async createPost() {
+            const content = document.getElementById('postContent').value.trim();
+
+            if (!content) {
+                this.showMessage('Share your wisdom with Wakanda!', 'error');
+                return;
+            }
+
+            const postBtn = document.getElementById('postBtn');
+            postBtn.textContent = 'Sharing...';
+            postBtn.disabled = true;
+
+            try {
+                const response = await this.fetchWithAuth('/posts', {
+                    method: 'POST',
+                    body: JSON.stringify({ content: content })
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.message || 'Failed to share your wisdom');
+                }
+
+                document.getElementById('postContent').value = '';
+                this.updateCharCounter();
+                this.validatePostForm();
+
+                this.showMessage('Your wisdom has been shared with the kingdom! ✨', 'success');
+                this.showRefreshIndicator('Post shared!');
+                await this.loadFeed();
+                await this.loadUserProfile();
+
+            } catch (error) {
+                console.error('Error creating post:', error);
+                this.showMessage(error.message, 'error');
+            } finally {
+                postBtn.textContent = 'Share with Kingdom';
+                this.validatePostForm();
+            }
+        }
+
+        async updateProfile() {
+            const displayName = document.getElementById('editDisplayName').value.trim();
+            const bio = document.getElementById('editBio').value.trim();
+
+            const updateBtn = document.getElementById('updateProfileBtn');
+            updateBtn.textContent = 'Updating...';
+            updateBtn.disabled = true;
+
+            try {
+                const response = await this.fetchWithAuth('/users/profile', {
+                    method: 'PUT',
+                    body: JSON.stringify({
+                        displayName: displayName,
+                        bio: bio
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to update your royal profile');
+                }
+
+                this.showMessage('Your royal profile has been enhanced! 👑', 'success');
+                this.showRefreshIndicator('Profile updated!');
+                await this.loadUserProfile();
+
+            } catch (error) {
+                console.error('Error updating profile:', error);
+                this.showMessage('Failed to update your profile', 'error');
+            } finally {
+                updateBtn.textContent = 'Update Royal Profile';
+                updateBtn.disabled = false;
+            }
+        }
+
+        async search(query) {
+            try {
+                document.getElementById('searchResults').innerHTML = `
+                        <div class="loading">
+                            <div class="spinner"></div>
+                            <p>Searching the kingdom...</p>
+                        </div>
+                    `;
+
+                const [postsResponse, usersResponse] = await Promise.all([
+                    this.fetchWithAuth(`/search/posts?q=${encodeURIComponent(query)}`),
+                    this.fetchWithAuth(`/search/users?q=${encodeURIComponent(query)}`)
+                ]);
+
+                const posts = await postsResponse.json();
+                const users = await usersResponse.json();
+
+                let resultsHtml = '';
+
+                if (users.length > 0) {
+                    resultsHtml += '<h3 style="margin-bottom: 20px; color: var(--wakanda-text);">🌟 Warriors Found</h3>';
+                    resultsHtml += '<div class="users-list" style="margin-bottom: 30px;">';
+                    resultsHtml += users.map(user => `
+                            <div class="user-item">
+                                <div class="user-item-avatar">${(user.displayName || user.username).charAt(0).toUpperCase()}</div>
+                                <div class="user-item-info">
+                                    <div class="user-item-name">${user.displayName || user.username}</div>
+                                    <div class="user-item-username">@${user.username}</div>
+                                </div>
+                                <div style="display: flex; gap: 8px;">
+                                    <button class="btn btn-small" onclick="app.startChat(${user.id}, '${user.username}', '${user.displayName || user.username}')"
+                                            style="background: linear-gradient(135deg, var(--wakanda-gold), #FFA500); padding: 6px 12px;">
+                                        💬
+                                    </button>
+                                    <button class="follow-btn ${user.isFollowing ? 'following' : ''}"
+                                            onclick="app.toggleFollow(${user.id}, this)">
+                                        ${user.isFollowing ? 'Following' : 'Follow'}
+                                    </button>
+                                </div>
+                            </div>
+                        `).join('');
+                    resultsHtml += '</div>';
+                }
+
+                if (posts.length > 0) {
+                    resultsHtml += '<h3 style="margin-bottom: 20px; color: var(--wakanda-text);">📜 Wisdom Found</h3>';
+                    resultsHtml += posts.map(post => this.createPostHTML(post)).join('');
+                }
+
+                if (users.length === 0 && posts.length === 0) {
+                    resultsHtml = '<p style="text-align: center; color: var(--wakanda-text-secondary); padding: 40px;">🔍 No results found in the kingdom</p>';
+                }
+
+                document.getElementById('searchResults').innerHTML = resultsHtml;
+
+            } catch (error) {
+                console.error('Error searching:', error);
+                document.getElementById('searchResults').innerHTML = `
+                        <div class="message error">Search failed in the kingdom</div>
+                    `;
+            }
+        }
+
+        async toggleLike(postId, button) {
+            try {
+                button.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    button.style.transform = 'scale(1)';
+                }, 150);
+
+                await this.fetchWithAuth(`/posts/${postId}/like`, {
+                    method: 'POST'
+                });
+
+                const isLiked = button.classList.contains('liked');
+                const countSpan = button.querySelector('.like-count');
+                let count = parseInt(countSpan.textContent) || 0;
+
+                if (isLiked) {
+                    button.classList.remove('liked');
+                    count = Math.max(0, count - 1);
+                } else {
+                    button.classList.add('liked');
+                    count += 1;
+                }
+
+                countSpan.textContent = count;
+                this.showRefreshIndicator('Like updated!');
+
+            } catch (error) {
+                console.error('Error toggling like:', error);
+            }
+        }
+
+        async toggleFollow(userId, button) {
+            try {
+                button.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    button.style.transform = 'scale(1)';
+                }, 150);
+
+                const isFollowing = button.classList.contains('following');
+
+                if (isFollowing) {
+                    await this.fetchWithAuth(`/users/${userId}/follow`, {
+                        method: 'DELETE'
+                    });
+                    button.classList.remove('following');
+                    button.textContent = 'Follow';
+                } else {
+                    await this.fetchWithAuth(`/users/${userId}/follow`, {
+                        method: 'POST'
+                    });
+                    button.classList.add('following');
+                    button.textContent = 'Following';
+                }
+
+                this.showRefreshIndicator('Follow status updated!');
+                await this.loadUserProfile(); // Update following count
+
+            } catch (error) {
+                console.error('Error toggling follow:', error);
+            }
+        }
+
+        async addComment(postId, input) {
+            const content = input.value.trim();
+            if (!content) return;
+
+            try {
+                const response = await this.fetchWithAuth(`/posts/${postId}/comments`, {
+                    method: 'POST',
+                    body: JSON.stringify({ content: content })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to add your wisdom');
+                }
+
+                input.value = '';
+                input.style.background = 'rgba(16, 185, 129, 0.1)';
+                setTimeout(() => {
+                    input.style.background = 'rgba(42, 42, 42, 0.8)';
+                }, 1000);
+
+                this.showRefreshIndicator('Comment added!');
+
+                if (this.currentTab === 'home') {
+                    await this.loadFeed();
+                } else if (this.currentTab === 'profile') {
+                    await this.loadUserPosts();
+                }
+
+            } catch (error) {
+                console.error('Error adding comment:', error);
+                this.showMessage('Failed to add your wisdom', 'error');
+            }
+        }
+
+        async deletePost(postId) {
+            if (!confirm('Are you sure you want to remove this wisdom from the kingdom?')) {
+                return;
+            }
+
+            try {
+                await this.fetchWithAuth(`/posts/${postId}`, {
+                    method: 'DELETE'
+                });
+
+                this.showMessage('Your wisdom has been removed from the kingdom 🗑️', 'success');
+                this.showRefreshIndicator('Post deleted!');
+
+                if (this.currentTab === 'home') {
+                    await this.loadFeed();
+                } else if (this.currentTab === 'profile') {
+                    await this.loadUserPosts();
+                }
+
+                await this.loadUserProfile();
+
+            } catch (error) {
+                console.error('Error deleting post:', error);
+                this.showMessage('Failed to remove your wisdom', 'error');
+            }
+        }
+
+        async loadConversations() {
+            try {
+                document.getElementById('conversationsList').innerHTML = `
+                        <div class="loading">
+                            <div class="spinner"></div>
+                            <p>Loading conversations...</p>
+                        </div>
+                    `;
+
+                const response = await this.fetchWithAuth('/messages/conversations');
+                const conversations = await response.json();
+
+                if (conversations.length === 0) {
+                    document.getElementById('conversationsList').innerHTML = `
+                            <p style="text-align: center; color: var(--wakanda-text-secondary); padding: 40px;">
+                                💬 No conversations yet. Start chatting with fellow warriors!
+                            </p>
+                        `;
+                    return;
+                }
+
+                const conversationsHtml = conversations.map(conv => `
+                        <div class="conversation-item" onclick="app.openChat(${conv.userId}, '${conv.username}', '${conv.displayName}')">
+                            <div class="conversation-avatar" style="position: relative;">
+                                ${conv.displayName.charAt(0).toUpperCase()}
+                                ${conv.isOnline ? '<div class="online-indicator"></div>' : ''}
+                            </div>
+                            <div class="conversation-info">
+                                <div class="conversation-name">${conv.displayName}</div>
+                                <div class="conversation-last-message">${conv.lastMessage}</div>
+                            </div>
+                            <div class="conversation-meta">
+                                <div class="conversation-time">${this.formatTimestamp(conv.lastMessageTime)}</div>
+                                ${conv.unreadCount > 0 ? `<div class="unread-badge">${conv.unreadCount}</div>` : ''}
+                            </div>
+                        </div>
+                    `).join('');
+
+                document.getElementById('conversationsList').innerHTML = conversationsHtml;
+
+            } catch (error) {
+                console.error('Error loading conversations:', error);
+                document.getElementById('conversationsList').innerHTML = `
+                        <div class="message error">Failed to load conversations</div>
+                    `;
+            }
+        }
+
+        async openChat(userId, username, displayName) {
+            this.currentChatUser = { id: userId, username, displayName };
+
+            // Update chat header
+            document.getElementById('chatAvatar').textContent = displayName.charAt(0).toUpperCase();
+            document.getElementById('chatUsername').textContent = `@${username}`;
+
+            // Check if user is online
+            const statusElement = document.getElementById('chatStatus');
+            try {
+                const response = await this.fetchWithAuth(`/users/${userId}`);
+                const user = await response.json();
+                if (user.lastActive) {
+                    const lastActive = new Date(user.lastActive);
+                    const now = new Date();
+                    const diffMinutes = (now - lastActive) / (1000 * 60);
+
+                    if (diffMinutes <= 10) {
+                        statusElement.textContent = 'Online';
+                        statusElement.className = 'chat-status';
+                    } else {
+                        statusElement.textContent = `Last seen ${this.formatTimestamp(user.lastActive)}`;
+                        statusElement.className = 'chat-status offline';
+                    }
+                } else {
+                    statusElement.textContent = 'Offline';
+                    statusElement.className = 'chat-status offline';
+                }
+            } catch (error) {
+                statusElement.textContent = 'Unknown';
+                statusElement.className = 'chat-status offline';
+            }
+
+            // Show chat area
+            document.querySelector('.conversations-list').style.display = 'none';
+            document.getElementById('chatArea').classList.remove('hidden');
+
+            // Load messages
+            await this.loadChatMessages(userId);
+
+            // Mark messages as read
+            await this.markMessagesAsRead(userId);
+
+            // Start message refresh for this chat
+            this.startMessageRefresh();
+        }
+
+        async loadChatMessages(userId) {
+            try {
+                document.getElementById('chatMessages').innerHTML = `
+                        <div class="loading">
+                            <div class="spinner"></div>
+                            <p>Loading messages...</p>
+                        </div>
+                    `;
+
+                const response = await this.fetchWithAuth(`/messages/conversation/${userId}`);
+                const messages = await response.json();
+
+                if (messages.length === 0) {
+                    document.getElementById('chatMessages').innerHTML = `
+                            <p style="text-align: center; color: var(--wakanda-text-secondary); padding: 40px;">
+                                💬 No messages yet. Start the conversation!
+                            </p>
+                        `;
+                    return;
+                }
+
+                const messagesHtml = messages.map(msg => `
+                        <div class="message-item ${msg.isSentByCurrentUser ? 'sent' : 'received'}">
+                            <div class="message-bubble ${msg.isSentByCurrentUser ? 'sent' : 'received'}">
+                                <div class="message-content">${this.escapeHtml(msg.content)}</div>
+                                <div class="message-time">${this.formatTimestamp(msg.timestamp)}</div>
+                            </div>
+                        </div>
+                    `).join('');
+
+                document.getElementById('chatMessages').innerHTML = messagesHtml;
+
+                // Scroll to bottom
+                const chatMessages = document.getElementById('chatMessages');
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            } catch (error) {
+                console.error('Error loading chat messages:', error);
+                document.getElementById('chatMessages').innerHTML = `
+                        <div class="message error">Failed to load messages</div>
+                    `;
+            }
+        }
+
+        async sendMessage() {
+            const input = document.getElementById('chatInput');
+            const content = input.value.trim();
+
+            if (!content || !this.currentChatUser) return;
+
+            try {
+                const response = await this.fetchWithAuth('/messages/send', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        receiverId: this.currentChatUser.id,
+                        content: content
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to send message');
+                }
+
+                input.value = '';
+                this.showRefreshIndicator('Message sent!');
+                await this.loadChatMessages(this.currentChatUser.id);
+
+            } catch (error) {
+                console.error('Error sending message:', error);
+                this.showMessage('Failed to send message', 'error');
+            }
+        }
+
+        async markMessagesAsRead(userId) {
+            try {
+                await this.fetchWithAuth(`/messages/read/${userId}`, {
+                    method: 'PUT'
+                });
+            } catch (error) {
+                console.error('Error marking messages as read:', error);
+            }
+        }
+
+        showConversationsList() {
+            document.querySelector('.conversations-list').style.display = 'block';
+            document.getElementById('chatArea').classList.add('hidden');
+            this.currentChatUser = null;
+            this.stopMessageRefresh();
+        }
+
+        async startChat(userId, username, displayName) {
+            this.showTab('messages');
+            setTimeout(() => {
+                this.openChat(userId, username, displayName);
+            }, 500);
+        }
+
+        displayPosts(posts, containerId) {
+            const container = document.getElementById(containerId);
+
+            if (posts.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: var(--wakanda-text-secondary); padding: 40px;">📜 No wisdom to display yet</p>';
+                return;
+            }
+
+            const postsHtml = posts.map(post => this.createPostHTML(post)).join('');
+            container.innerHTML = postsHtml;
+        }
+
+        createPostHTML(post, showDeleteButton = false) {
+            const commentsHtml = post.comments && post.comments.length > 0 ?
+                post.comments.map(comment => `
+                        <div class="comment">
+                            <div class="comment-header">
+                                <span class="comment-username">@${comment.username}</span>
+                                <span class="comment-time">${this.formatTimestamp(comment.timestamp)}</span>
+                            </div>
+                            <div class="comment-content">${this.escapeHtml(comment.content)}</div>
+                        </div>
+                    `).join('') : '';
+
+            return `
+                    <div class="post">
+                        <div class="post-header">
+                            <div class="post-avatar">${(post.displayName || post.username).charAt(0).toUpperCase()}</div>
+                            <div class="post-user-info">
+                                <div class="post-username">@${post.username}</div>
+                                <div class="post-time">${this.formatTimestamp(post.timestamp)}</div>
+                            </div>
+                            ${showDeleteButton && post.userId === this.currentUser.id ?
+                `<button class="btn btn-small" onclick="app.deletePost(${post.id})" style="background: linear-gradient(135deg, var(--wakanda-error), #dc2626); box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);">🗑️ Delete</button>` :
+                ''}
+                        </div>
+                        <div class="post-content">${this.escapeHtml(post.content)}</div>
+                        <div class="post-actions">
+                            <button class="post-action ${post.isLiked ? 'liked' : ''}" onclick="app.toggleLike(${post.id}, this)">
+                                ❤️ <span class="like-count">${post.likesCount || 0}</span>
+                            </button>
+                            <button class="post-action">
+                                💬 <span>${post.commentsCount || 0}</span>
+                            </button>
+                        </div>
+                        ${post.comments && post.comments.length > 0 ? `
+                            <div class="comments-section">
+                                ${commentsHtml}
+                            </div>
+                        ` : ''}
+                        <div class="comment-form">
+                            <input type="text" class="comment-input" placeholder="Share your wisdom..."
+                                   onkeypress="if(event.key==='Enter') app.addComment(${post.id}, this)">
+                            <button class="btn btn-small" onclick="app.addComment(${post.id}, this.previousElementSibling)">💫 Comment</button>
+                        </div>
+                    </div>
+                `;
+        }
+
+        updateCharCounter() {
+            const postContent = document.getElementById('postContent');
+            const charCounter = document.getElementById('charCounter');
+            const length = postContent.value.length;
+
+            charCounter.textContent = `${length}/280`;
+
+            charCounter.className = 'char-counter';
+            if (length > 250) {
+                charCounter.classList.add('warning');
+            }
+            if (length > 270) {
+                charCounter.classList.add('danger');
+            }
+
+            if (length > 0) {
+                postContent.style.borderColor = 'var(--wakanda-purple)';
+            } else {
+                postContent.style.borderColor = 'var(--wakanda-border)';
+            }
+        }
+
+        validatePostForm() {
+            const postContent = document.getElementById('postContent');
+            const postBtn = document.getElementById('postBtn');
+
+            const hasContent = postContent.value.trim() !== '';
+            const isValidLength = postContent.value.length <= 280;
+
+            postBtn.disabled = !(hasContent && isValidLength);
+
+            if (hasContent && isValidLength) {
+                postBtn.style.background = 'linear-gradient(135deg, var(--wakanda-purple) 0%, var(--wakanda-blue) 100%)';
+            } else {
+                postBtn.style.background = 'linear-gradient(135deg, var(--wakanda-silver) 0%, var(--wakanda-light-gray) 100%)';
+            }
+        }
+
+        async fetchWithAuth(url, options = {}) {
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${this.token}`,
+                    ...options.headers
+                },
+                ...options
+            };
+
+            const response = await fetch(`${this.baseUrl}${url}`, config);
+
+            if (response.status === 401) {
+                this.logout();
+                throw new Error('Your session has expired. Please return to the kingdom.');
+            }
+
+            return response;
+        }
+
+        showMessage(message, type) {
+            const messagesContainer = document.getElementById('messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            messageDiv.textContent = message;
+
+            messagesContainer.innerHTML = '';
+            messagesContainer.appendChild(messageDiv);
+
+            messageDiv.style.transform = 'translateY(-20px) scale(0.95)';
+            messageDiv.style.opacity = '0';
+            setTimeout(() => {
+                messageDiv.style.transition = 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+                messageDiv.style.transform = 'translateY(0) scale(1)';
+                messageDiv.style.opacity = '1';
+            }, 10);
+
+            setTimeout(() => {
+                messageDiv.style.transform = 'translateY(-20px) scale(0.95)';
+                messageDiv.style.opacity = '0';
+                setTimeout(() => {
+                    messageDiv.remove();
+                }, 500);
+            }, type === 'success' ? 3000 : 5000);
+        }
+
+        showRefreshIndicator(message) {
+            const indicator = document.createElement('div');
+            indicator.className = 'refresh-indicator';
+            indicator.textContent = message;
+            document.body.appendChild(indicator);
+
+            setTimeout(() => {
+                indicator.style.transform = 'translateX(100%)';
+                indicator.style.opacity = '0';
+                setTimeout(() => {
+                    indicator.remove();
+                }, 300);
+            }, 2000);
+        }
+
+        startAutoRefresh() {
+            // Refresh feed every 30 seconds
+            this.autoRefreshInterval = setInterval(async () => {
+                if (this.currentTab === 'home') {
+                    await this.loadFeed();
+                } else if (this.currentTab === 'messages') {
+                    await this.loadConversations();
+                }
+                await this.loadUserProfile();
+            }, 30000);
+        }
+
+        stopAutoRefresh() {
+            if (this.autoRefreshInterval) {
+                clearInterval(this.autoRefreshInterval);
+                this.autoRefreshInterval = null;
+            }
+        }
+
+        startMessageRefresh() {
+            if (this.messageRefreshInterval) {
+                clearInterval(this.messageRefreshInterval);
+            }
+
+            // Refresh messages every 5 seconds when in a chat
+            this.messageRefreshInterval = setInterval(async () => {
+                if (this.currentChatUser) {
+                    await this.loadChatMessages(this.currentChatUser.id);
+                }
+            }, 5000);
+        }
+
+        stopMessageRefresh() {
+            if (this.messageRefreshInterval) {
+                clearInterval(this.messageRefreshInterval);
+                this.messageRefreshInterval = null;
+            }
+        }
+
+        formatTimestamp(timestamp) {
+            const date = new Date(timestamp);
+            const now = new Date();
+            const diffInSeconds = Math.floor((now - date) / 1000);
+
+            if (diffInSeconds < 60) {
+                return 'Just now';
+            } else if (diffInSeconds < 3600) {
+                const minutes = Math.floor(diffInSeconds / 60);
+                return `${minutes}m ago`;
+            } else if (diffInSeconds < 86400) {
+                const hours = Math.floor(diffInSeconds / 3600);
+                return `${hours}h ago`;
+            } else {
+                return date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            }
+        }
+
+        escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        toggleNotifications() {
+            const notificationList = document.getElementById('notificationList');
+            notificationList.classList.toggle('hidden');
+        }
+    }
+
+    // Initialize the app when the page loads
+    let app;
+    document.addEventListener('DOMContentLoaded', () => {
+        app = new WakandaSocial();
+    });
+</script>
+</body>
+</html>
