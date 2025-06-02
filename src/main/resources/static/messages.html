@@ -1,0 +1,110 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><div class="tab-content" id="messagesTab">
+    <div class="messages-container">
+        <div class="conversations-list">
+            <h3 style="margin-bottom: 20px; color: var(--wakanda-text);">💬 Your Conversations</h3>
+            <div id="conversationsList">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading conversations...</p>
+                </div>
+            </div>
+        </div>
+        <div class="chat-area hidden" id="chatArea">
+            <div class="chat-header" id="chatHeader">
+                <button class="btn btn-small" id="backToConversations">← Back</button>
+                <div class="chat-user-info">
+                    <div class="chat-avatar" id="chatAvatar">W</div>
+                    <div>
+                        <div class="chat-username" id="chatUsername">Select a conversation</div>
+                        <div class="chat-status" id="chatStatus">Online</div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading messages...</p>
+                </div>
+            </div>
+            <div class="chat-input-container
+
+System: The response was cut off due to length constraints. I'll continue by completing the `messages.html` artifact, providing the remaining HTML files (`search.html`, `profile.html`), the CSS file (`styles.css`), and the JavaScript files (`app.js`, `utils.js`). I'll also address the specific issues (posting, profile updates, DM sorting) and ensure profile picture placeholders are round.
+
+### Completion of `messages.html`
+This continues the messages page, including the chat input section.
+
+<xaiArtifact artifact_id="56ceeb47-96bb-4efa-9144-7736a9404445" artifact_version_id="0e10d3f6-ab7c-4a9d-9889-5cc13aaad872" title="messages.html" contentType="text/html">
+<div class="tab-content" id="messagesTab">
+    <div class="messages-container">
+        <div class="conversations-list">
+            <h3 style="margin-bottom: 20px; color: var(--wakanda-text);">💬 Your Conversations</h3>
+            <div id="conversationsList">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading conversations...</p>
+                </div>
+            </div>
+        </div>
+        <div class="chat-area hidden" id="chatArea">
+            <div class="chat-header" id="chatHeader">
+                <button class="btn btn-small" id="backToConversations">← Back</button>
+                <div class="chat-user-info">
+                    <div class="chat-avatar" id="chatAvatar">W</div>
+                    <div>
+                        <div class="chat-username" id="chatUsername">Select a conversation</div>
+                        <div class="chat-status" id="chatStatus">Online</div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading messages...</p>
+                </div>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
+                <button class="btn btn-small" id="sendMessageBtn">Send</button>
+            </div>
+        </div>
+    </div>
+</div>

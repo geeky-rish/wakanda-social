@@ -1,0 +1,3477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="login-pf">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="robots" content="noindex, nofollow">
+     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <script type="text/javascript" src="/auth/resources/ly2r0/login/Codevita_New_Dark/js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="/auth/resources/ly2r0/login/Codevita_New_Dark/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script type="text/javascript" src="/auth/resources/ly2r0/login/Codevita_New_Dark/js/geometryangle.js"></script>
+    <script type="text/javascript" src="/auth/resources/ly2r0/login/Codevita_New_Dark/js/codevita.js"></script>
+    <link href="/auth/resources/ly2r0/login/Codevita_New_Dark/css/bootstrap.min.css">
+            <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Sign in to TCS CodeVita</title>
+    <link rel="icon" href="/auth/resources/ly2r0/login/Codevita_New_Dark/img/favicon.ico" />
+            <link href="/auth/resources/ly2r0/common/keycloak/web_modules/@patternfly/react-core/dist/styles/base.css" rel="stylesheet" />
+            <link href="/auth/resources/ly2r0/common/keycloak/web_modules/@patternfly/react-core/dist/styles/app.css" rel="stylesheet" />
+            <link href="/auth/resources/ly2r0/common/keycloak/node_modules/patternfly/dist/css/patternfly.min.css" rel="stylesheet" />
+            <link href="/auth/resources/ly2r0/common/keycloak/node_modules/patternfly/dist/css/patternfly-additions.min.css" rel="stylesheet" />
+            <link href="/auth/resources/ly2r0/common/keycloak/lib/pficon/pficon.css" rel="stylesheet" />
+            <link href="/auth/resources/ly2r0/login/Codevita_New_Dark/css/login.css" rel="stylesheet" />
+            <link href="/auth/resources/ly2r0/login/Codevita_New_Dark/css/tile.css" rel="stylesheet" />
+    <style>
+        svg {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 17px;
+        }
+        input[type="submit"] {
+            background: #330080 !important;
+        }
+    </style>
+</head>
+
+<body class="">
+<div class="login-pf-page area">
+    <div class="outer mx-auto">
+    
+    <div class="card-pf" style="position: relative;">
+         <svg id="waves" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" style="width:100%">
+            <path d="M0,150 C150,250 350,10 500,180 L500,00 L0,0 Z" style="stroke: none; fill:#330080;"></path>
+        </svg>
+        <div id="kc-header" class="login-pf-page-header">
+            <div id="kc-header-wrapper"
+                class=" codevita_logo"></div>
+        </div>
+        <header class="login-pf-header">
+                <h1 id="kc-page-title">        Sign in
+
+</h1>
+      </header>
+      <div id="kc-content">
+        <div id="kc-content-wrapper">
+
+
+        <div id="kc-form">
+            <div id="kc-form-wrapper">
+                    <form id="kc-form-login" onsubmit="login.disabled = true; return true;" action="https://codevita.tcsapps.com/auth/realms/Codevita/login-actions/authenticate?session_code=70Uzn7X4dHQssgYionJUpD92_VkLoGGFd5fk_cHwO90&amp;execution=498253fc-8704-42f8-bae2-76f7bd7b3cda&amp;client_id=codevita-app&amp;tab_id=Cp9vJV2VXCw"
+                          method="post">
+                            <div class="form-group">
+                                <label for="username"
+                                       class="pf-c-form__label pf-c-form__label-text">Username or email</label>
+
+                                <input tabindex="1" id="username"
+                                       aria-invalid=""
+                                       class="pf-c-form-control" name="username"
+                                       value=""
+                                       type="text" autofocus autocomplete="off"/>
+
+                            </div>
+
+                        <div class="form-group login-pf-settings">
+                            <div id="kc-form-options">
+                                <div class="">
+                                        <span><a tabindex="5" href="/auth/realms/Codevita/login-actions/reset-credentials?client_id=codevita-app&amp;tab_id=Cp9vJV2VXCw">Deleted OTP Account?</a></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="kc-form-buttons" class="form-group">
+                            <input tabindex="4"
+                                   class="pf-c-button pf-m-primary pf-m-block btn-lg"
+                                   name="login" id="kc-login" type="submit" value="Sign In"/>
+                        </div>
+                    </form>
+            </div>
+        </div>
+
+
+
+
+              <div id="kc-info" class="login-pf-signup">
+                  <div id="kc-info-wrapper" class="">
+            <div id="kc-registration">
+                <span>New user? <a tabindex="6" href="/auth/realms/Codevita/login-actions/registration?client_id=codevita-app&amp;tab_id=Cp9vJV2VXCw">Register</a></span>
+            </div>
+         <div id="kc-registration" class="mt-2">
+             <span><a href="https://www.tcs.com/privacy-policy" target="_blank">Privacy Notice</a></span>
+         </div>
+
+                  </div>
+              </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+  </div>
+  <!-- The Modal -->
+<div id="myModal" class="modal" data-bs-keyboard="false" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="min-width: 80% !important;">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div id="allcountries" style="display:none;">
+        <header class="text-center">
+        <h1 id="kc-page-title">Terms and Conditions</h1>
+        </header>
+        
+        <!-- div for each countries -->
+        <div id="kc-terms-Europe" style="display:none;">
+<h2>
+  By entering the contest, each contestant entrant (a "contestant") confirms
+  they understand and agree the following terms and conditions apply to any and
+  every stage of their participation: :
+</h2>
+<ul>
+  <li>
+    The candidate must be at least eighteen (18) years old or the age of
+    majority in their country of residence (whichever is greater) at the time of
+    their initial registration for TCS CodeVita.
+  </li>
+  <li>
+    The contestant acknowledges that the solution submitted will be an original
+    work created solely by him/her, and the contestant confirms that the
+    submission does not infringe on any or intellectual property rights of any
+    person or entity including but not limited to copyrights, trademarks, moral
+    rights, rights of privacy/publicity etc, and no other party has any
+    proprietary interest in the solution including but not limited to any right,
+    title, claim, to ownership or makes any contribution whatsoever to its
+    content.. Contestants who have submitted an entry are either the copyright
+    owners of the component parts of that work or are posting the work under
+    license from a copyright owner or otherwise as permitted by law..
+  </li>
+  <li>
+    The application submitted will be disqualified if it contains content where
+    any person/s would be required to undertake inappropriate actions or see
+    inappropriate content such as , indecent, obscene, violent, hateful,
+    tortuous, defamatory, slanderous and/or promotes racism or hatred against
+    any group or individual or that promotes discrimination based on race, sex,
+    religion, nationality, disability, sexual orientation or age; or that is
+    unlawful, in violation of or contrary to the laws or regulations in the
+    state or province where the application is developed.
+  </li>
+  <li>
+    The contestant is the sole author of the submission and/or that it is the
+    contestant's original work.
+  </li>
+  <li>
+    The /contestant has not licensed or otherwise sold, transferred or disposed
+    of any rights whatsoever in the submission that would conflict with any use
+    in this competition or restrict its use in the future by TCS (if any) in
+    accordance with these rules. TCS does not claim ownership rights in your
+    works or other materials posted by you as a result of your submission as a
+    contestant.
+  </li>
+  <li>
+    Each contestant's entry shall be deemed to grant TCS a non-exclusive,
+    royalty-free license to reproduce, distribute, re-format, store, prepare
+    derivative works based on, and publicly display all and/or any part of the
+    submission content solely for the purpose of enabling TCS to make the
+    submission solution available through the TCS portal. Each Contestant shall
+    not distribute any part of the portal other than their own content in any
+    medium, other than as permitted in these Terms and Conditions.
+  </li>
+  <li>
+    Each contestant hereby authorizes TCS to display or otherwise make a
+    publication of any entry on a TCS website. Any such promotion does not
+    indicate the entry will be selected as a winner. Contestants release,
+    discharge, and hold harmless TCS from any claims, losses, and damages
+    arising out of participation in this Contest or any Contest-related
+    activities. TCS assumes no responsibility for any error, omission,
+    interruption, deletion, defect, or delay in operation or transmission;
+    communications line failure; theft or destruction of or unauthorized access
+    to Contest entries or entry forms; or alteration of entries or entry forms.
+    TCS is not responsible for any problems with or technical malfunction of any
+    telephone network or lines, computer online systems, servers or providers,
+    computer equipment, software, failure of any email entry to be received on
+    account of technical problems or traffic congestion on the Internet or at
+    any website, human errors of any kind, or any combination thereof, including
+    any injury or damage to entrants' or any other persons' computers related to
+    or resulting from participation, uploading or downloading of any materials
+    related to in this Contest.
+  </li>
+  <li>
+    TCS reserves the right, at its sole discretion, to cancel or terminate the
+    Contest, at any time and accepts no liability to any contestant on such
+    termination.
+  </li>
+  <li>
+    TCS reserves the right to relax any of these restrictions if permitted by
+    law before the start of the Qualification Round.
+  </li>
+  <li>
+    All contestants must have access to the Internet, a valid postal address,
+    and a valid email address in order to enter the contest.
+  </li>
+  <li>
+    At no point in time during the contest until the winners are announced
+    should any TCS internal stakeholders or their agents attempt to influence
+    the outcome including but not limited to events/ flow of the contest by way
+    of guidance, pep up/ technology/ language specific sessions for anyone
+    and/or any institute participating in the contest
+  </li>
+  <li>
+    TCS frequently organizes events and initiatives, either free to join or by
+    invitation only; in these cases, this privacy notice applies to both
+    participants and speakers, together with any other supplementary information
+    that is provided in relation with each event. To allow participants to join
+    the events (including communications pre and post event), we are required to
+    collect and process a limited amount of information, such as: full name,
+    username, password, email address, telephone number(optional), location,
+    academic year of graduation, institute name, pictures and video of you(if
+    you reach top 25-30 in the final round of the contest). TCS may also process
+    your data for connecting with you to extend internship and/or career
+    opportunities, if applicable. Where a hospitality service is provided, we
+    may also collect, store and process "special categories" of more sensitive
+    personal data (SPI), such as dietary requirements or personal disabilities.
+    This will be done only and to the extent permitted by law. Events might be
+    recorded, hence pictures and videos may be collected too; in such cases, you
+    may be informed via a specific notice at the location of recording. This
+    material may be used later by TCS for further compatible purposes in
+    accordance with the notices you receive. Also, during the course of the
+    events, we may collect from you data about yourself, which we later may use
+    to contact you again in order to receive feedback and/or provide further
+    commercial information about TCS; this may be done with your consent,
+    wherever necessary. We may also obtain data from third parties including
+    third party event organizers where the event is sponsored by TCS. Organizers
+    might provide the attendee list. In such cases, the privacy statement of
+    those third parties to whom you provide your personal data will apply to
+    you.
+  </li>
+  <li>
+    The data submitted by a contestant at the time of registration can be
+    accessed by TCS for market research and analytics, contest promotions and
+    reach, without any disclosure of the contestant's personal data(PII), for
+    example - name, email id, etc. In cases of the contestant ranking among the
+    Top 3, he/she/they consent to TCS's use of PII including Name, Country,
+    Institute Name and photograph and inclusion in the Hall of Fame digital
+    album on the CodeVita site, located at codevita.tcsapps.com.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+</ul>
+
+<h2>Indemnifications</h2>
+<p>
+  Contestants shall fully indemnify and hold TCS (Tata Consultancy Services
+  Limited) harmless for and against all damages, losses, and costs that might be
+  caused by:
+</p>
+<ul>
+  <li>
+    A contestant's failure to comply with the terms of entry for this
+    competition and/or
+  </li>
+  <li>
+    Third party claim(s) that their rights and IPR are violated / effected by a
+    contestant's submission here under.
+  </li>
+</ul>
+        </div>
+        <div id="kc-terms-LatamTAndC" style="display:none;">
+<h2>
+  By entering the contest, each participant/ contestant confirms and agrees to
+  the following terms and conditions:
+</h2>
+<ul>
+  <li>
+    The candidate must be at least eighteen (18) years old or the age of
+    majority in his/her country of residence (whichever is greater) at the time
+    of his/her initial registration for TCS CodeVita.
+  </li>
+  <li>
+    The participant/ contestant thereof acknowledges that the solution submitted
+    will be an original work created solely by him/her, and that the solution
+    does not infringe on copyrights, trademarks, moral rights, rights of
+    privacy/publicity or intellectual property rights of any person or entity,
+    and that no other party has any right, title, claim, or interest in the
+    solution.
+  </li>
+  <li>
+    The application must not contain content where any person/s would be
+    required to undertake actions that is inappropriate, indecent, obscene,
+    violent, hateful, tortuous, defamatory, slanderous; that promotes racism or
+    hatred against any group or individual or that promotes discrimination based
+    on race, sex, religion, nationality, disability, sexual orientation or age;
+    or that is unlawful, in violation of or contrary to the laws or regulations
+    in the state or province where the application is developed.
+  </li>
+  <li>
+    The participant/contestant thereof is the sole author of the solution and
+    that it is the their original work.
+  </li>
+  <li>
+    The participant/contestant has not licensed or disposed of any rights in the
+    solution that would conflict with any of TCS use (if any).
+  </li>
+  <li>
+    Participants who have submitted their solution are either the copyright
+    owners of the component parts of that work or are posting the work under
+    license from a copyright owner or otherwise as permitted by law. TCS does
+    not claim ownership rights in your works or other materials posted by you.
+  </li>
+  <li>
+    The participant/contestant for the sole purpose of enabling us to make your
+    solution available through our portal you grant TCS a non-exclusive,
+    royalty-free license to reproduce, distribute, re-format, store, prepare
+    derivative works based on, and publicly display your content. You agree not
+    to distribute any part of the portal other than your content in any medium
+    other than as permitted in these Terms and Conditions.
+  </li>
+  <li>
+    The participant/contestant knows and accepts the Privacy policy for
+    CodeVita. Privacy policy is available on codevita.tcsapps.com
+  </li>
+  <li>
+    Display or publication of any entry on a TCS website does not indicate the
+    entrant will be selected as a winner. TCS will not be required to pay any
+    additional consideration or seek any additional approval in connection with
+    such use.
+  </li>
+  <li>
+    By entering this Contest, all entrants agree to release, discharge, and hold
+    harmless TCS from any claims, losses, and damages arising out of their
+    participation in this Contest or any Contest-related activities. TCS assumes
+    no responsibility for any error, omission, interruption, deletion, defect,
+    or delay in operation or transmission; communications line failure; theft or
+    destruction of or unauthorized access to Contest entries or entry forms; or
+    alteration of entries or entry forms. TCS is not responsible for any
+    problems with or technical malfunction of any telephone network or lines,
+    computer online systems, servers or providers, computer equipment, software,
+    failure of any email entry to be received on account of technical problems
+    or traffic congestion on the Internet or at any website, human errors of any
+    kind, or any combination thereof, including any injury or damage to
+    entrants' or any other persons' computers related to or resulting from
+    participation, uploading or downloading of any materials related to in this
+    Contest.
+  </li>
+  <li>
+    All the instructions, questions, FAQs and other material pertaining to the
+    contest will be in English language only.
+  </li>
+  <li>
+    TCS reserves the right, at its sole discretion, to cancel or terminate the
+    Contest, at any time it deems fit and proper. No claims or representations
+    shall be entertained in this regard.
+  </li>
+  <li>
+    TCS reserves the right to relax any of these restrictions if permitted by
+    law before the start of the Qualification Round.
+  </li>
+  <li>
+    All contestants must have access to the Internet, a valid postal address,
+    and a valid email address in order to enter the contest.
+  </li>
+  <li>
+    TCS reserves the right to verify eligibility and to adjudicate on any
+    dispute at any time. TCS will be the sole authority to decide the winners of
+    the contest and decision of TCS will be final and binding on all the
+    contestants.
+  </li>
+  <li>
+    At no point of time during the contest should internal stakeholders attempt
+    to influence the events/ flow of the contest by way of guidance, pep up/
+    technology/ language specific sessions for students in any institute
+    participating for the contest. Talent Acquisition Team to ensure complete
+    compliance to all guidelines enclosed in this document.
+  </li>
+  <li>
+    The data submitted by a contestant at the time of registration can be
+    accessed by TCS for market research and analytics, contest promotions and
+    reach, without any disclosure of the contestant's personal data(PII), for
+    example - name, email id, etc. In cases of the contestant ranking among the
+    Top 3, he/she/they consent to TCS's use of PII including Name, Country,
+    Institute Name and photograph and inclusion in the Hall of Fame digital
+    album on the CodeVita site, located at codevita.tcsapps.com.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+</ul>
+<h2>Indemnifications</h2>
+<p>
+  You fully indemnify and hold us (Tata Consultancy Services Limited) harmless
+  for and against all damages, losses, and costs that might be caused by:
+</p>
+<ul>
+  <li>Your failure to comply with the terms of the above agreement</li>
+  <li>
+    Third party claim(s) of their rights and IPR being violated / effected by
+    your article(s) submitted to us.
+  </li>
+</ul>
+        </div>
+        <div id="kc-terms-MEATAndC" style="display:none;">
+<h2>
+  By entering the contest, each participant/ contestant confirms and agrees to
+  the following terms and conditions:
+</h2>
+<ul>
+  <li>
+    The candidate must be at least eighteen (18) years old or the age of
+    majority in his/her country of residence (whichever is greater) at the time
+    of his/her initial registration for TCS CodeVita.
+  </li>
+  <li>
+    The participant/ contestant thereof acknowledges that the solution submitted
+    will be an original work created solely by him/her, and that the solution
+    does not infringe on copyrights, trademarks, moral rights, rights of
+    privacy/publicity or intellectual property rights of any person or entity,
+    and that no other party has any right, title, claim, or interest in the
+    solution.
+  </li>
+  <li>
+    The application must not contain content where any person/s would be
+    required to undertake actions that is inappropriate, indecent, obscene,
+    violent, hateful, tortuous, defamatory, slanderous; that promotes racism or
+    hatred against any group or individual or that promotes discrimination based
+    on race, sex, religion, nationality, disability, sexual orientation or age;
+    or that is unlawful, in violation of or contrary to the laws or regulations
+    in the state or province where the application is developed.
+  </li>
+  <li>
+    The participant/contestant thereof is the sole author of the solution and
+    that it is the team's original work.
+  </li>
+  <li>
+    The participant/contestant has not licensed or disposed of any rights in the
+    solution that would conflict with any of TCS use (if any).
+  </li>
+  <li>
+    Participants who have submitted their solution are either the copyright
+    owners of the component parts of that work or are posting the work under
+    license from a copyright owner or otherwise as permitted by law. TCS does
+    not claim ownership rights in your works or other materials posted by you.
+  </li>
+  <li>
+    For the sole purpose of enabling us to make your solution available through
+    our portal you grant TCS a non-exclusive, royalty-free license to reproduce,
+    distribute, re-format, store, prepare derivative works based on, and
+    publicly display your content. You agree not to distribute any part of the
+    portal other than your content in any medium other than as permitted in
+    these Terms and Conditions
+  </li>
+  <li>
+    Display or publication of any entry on a TCS website does not indicate the
+    entrant will be selected as a winner. TCS will not be required to pay any
+    additional consideration or seek any additional approval in connection with
+    such use.
+  </li>
+  <li>
+    By entering this Contest, all entrants agree to release, discharge, and hold
+    harmless TCS from any claims, losses, and damages arising out of their
+    participation in this Contest or any Contest-related activities. TCS assumes
+    no responsibility for any error, omission, interruption, deletion, defect,
+    or delay in operation or transmission; communications line failure; theft or
+    destruction of or unauthorized access to Contest entries or entry forms; or
+    alteration of entries or entry forms. TCS is not responsible for any
+    problems with or technical malfunction of any telephone network or lines,
+    computer online systems, servers or providers, computer equipment, software,
+    failure of any email entry to be received on account of technical problems
+    or traffic congestion on the Internet or at any website, human errors of any
+    kind, or any combination thereof, including any injury or damage to
+    entrants' or any other persons' computers related to or resulting from
+    participation, uploading or downloading of any materials related to in this
+    Contest.
+  </li>
+  <li>
+    TCS reserves the right, at its sole discretion, to cancel or terminate the
+    Contest, at any time it deems fit and proper. No claims or representations
+    shall be entertained in this regard.
+  </li>
+  <li>
+    TCS reserves the right to relax any of these restrictions if permitted by
+    law before the start of the Qualification Round.
+  </li>
+  <li>
+    All contestants must have access to the Internet, a valid postal address,
+    and a valid email address in order to enter the contest.
+  </li>
+  <li>
+    TCS reserves the right to verify eligibility and to adjudicate on any
+    dispute at any time. TCS will be the sole authority to decide the winners of
+    the contest and decision of TCS will be final and binding on all the
+    contestants.
+  </li>
+  <li>
+    At no point of time during the contest should internal stakeholders attempt
+    to influence the events/ flow of the contest by way of guidance, pep up/
+    technology/ language specific sessions for students in any institute
+    participating for the contest. TAG teams to ensure complete compliance to
+    all guidelines enclosed in this document.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+  <h2>Indemnifications</h2>
+  <p>
+    You fully indemnify and hold us (Tata Consultancy Services Limited) harmless
+    for and against all damages, losses, and costs that might be caused by:
+  </p>
+  <ul>
+    <li>Your failure to comply with the terms of the above agreement</li>
+    <li>
+      Third party claim(s) of their rights and IPR being violated / effected by
+      your article(s) submitted to us.
+    </li>
+    <li>
+      The data submitted by a contestant at the time of registration can be
+      accessed by TCS for market research and analytics, contest promotions and
+      reach, without any disclosure of the contestant's personal data(PII), for
+      example - name, email id, etc. In cases of the contestant ranking among
+      the Top 3, he/she/they consent to TCS's use of PII including Name,
+      Country, Institute Name and photograph and inclusion in the Hall of Fame
+      digital album on the CodeVita site, located at codevita.tcsapps.com.
+    </li>
+  </ul>
+</ul>
+        </div>
+        <div id="kc-terms-0_TandC" style="display:none;">
+<h2>
+  By entering the contest, each participant/ contestant confirms and agrees to
+  the following terms and conditions:
+</h2>
+<ul>
+  <li>
+    The candidate must be at least eighteen (18) years old or the age of
+    majority in his/her country of residence (whichever is greater) at the time
+    of his/her initial registration for TCS CodeVita.
+  </li>
+  <li>
+    The participant/ contestant thereof acknowledges that the solution submitted
+    will be an original work created solely by him/her, and that the solution
+    does not infringe on copyrights, trademarks, moral rights, rights of
+    privacy/publicity or intellectual property rights of any person or entity,
+    and that no other party has any right, title, claim, or interest in the
+    solution.
+  </li>
+  <li>
+    The application must not contain content where any person/s would be
+    required to undertake actions that is inappropriate, indecent, obscene,
+    violent, hateful, tortuous, defamatory, slanderous; that promotes racism or
+    hatred against any group or individual or that promotes discrimination based
+    on race, sex, religion, nationality, disability, sexual orientation or age;
+    or that is unlawful, in violation of or contrary to the laws or regulations
+    in the state or province where the application is developed.
+  </li>
+  <li>
+    The participant/contestant thereof is the sole author of the solution and
+    that it is the team's original work.
+  </li>
+  <li>
+    The participant/contestant has not licensed or disposed of any rights in the
+    solution that would conflict with any of TCS use (if any).
+  </li>
+  <li>
+    Participants who have submitted their solution are either the copyright
+    owners of the component parts of that work or are posting the work under
+    license from a copyright owner or otherwise as permitted by law. TCS does
+    not claim ownership rights in your works or other materials posted by you.
+  </li>
+  <li>
+    For the sole purpose of enabling us to make your solution available through
+    our portal you grant TCS a non-exclusive, royalty-free license to reproduce,
+    distribute, re-format, store, prepare derivative works based on, and
+    publicly display your content. You agree not to distribute any part of the
+    portal other than your content in any medium other than as permitted in
+    these Terms and Conditions.
+  </li>
+  <li>
+    Display or publication of any entry on a TCS website does not indicate the
+    entrant will be selected as a winner. TCS will not be required to pay any
+    additional consideration or seek any additional approval in connection with
+    such use.
+  </li>
+  <li>
+    By entering this Contest, all entrants agree to release, discharge, and hold
+    harmless TCS from any claims, losses, and damages arising out of their
+    participation in this Contest or any Contest-related activities. TCS assumes
+    no responsibility for any error, omission, interruption, deletion, defect,
+    or delay in operation or transmission; communications line failure; theft or
+    destruction of or unauthorized access to Contest entries or entry forms; or
+    alteration of entries or entry forms. TCS is not responsible for any
+    problems with or technical malfunction of any telephone network or lines,
+    computer online systems, servers or providers, computer equipment, software,
+    failure of any email entry to be received on account of technical problems
+    or traffic congestion on the Internet or at any website, human errors of any
+    kind, or any combination thereof, including any injury or damage to
+    entrants' or any other persons' computers related to or resulting from
+    participation, uploading or downloading of any materials related to in this
+    Contest.
+  </li>
+  <li>
+    TCS reserves the right, at its sole discretion, to cancel or terminate the
+    Contest, at any time it deems fit and proper. No claims or representations
+    shall be entertained in this regard.
+  </li>
+  <li>
+    TCS reserves the right to relax any of these restrictions if permitted by
+    law before the start of the Qualification Round.
+  </li>
+  <li>
+    All contestants must have access to the Internet, a valid postal address,
+    and a valid email address in order to enter the contest.
+  </li>
+  <li>
+    TCS reserves the right to verify eligibility and to adjudicate on any
+    dispute at any time. TCS will be the sole authority to decide the winners of
+    the contest and decision of TCS will be final and binding on all the
+    contestants.
+  </li>
+  <li>
+    At no point of time during the contest should internal stakeholders attempt
+    to influence the events/ flow of the contest by way of guidance, pep up/
+    technology/ language specific sessions for students in any institute
+    participating for the contest. TAG teams to ensure complete compliance to
+    all guidelines enclosed in this document.
+  </li>
+  <li>
+    The data submitted by a contestant at the time of registration can be
+    accessed by TCS for market research and analytics, contest promotions and
+    reach, without any disclosure of the contestant's personal data(PII), for
+    example - name, email id, etc. In cases of the contestant ranking among the
+    Top 3, he/she/they consent to TCS's use of PII including Name, Country,
+    Institute Name and photograph and inclusion in the Hall of Fame digital
+    album on the CodeVita site, located at codevita.tcsapps.com.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+</ul>
+<h2>Indemnifications</h2>
+
+<p>
+  fully indemnify and hold us (Tata Consultancy Services Limited) harmless for
+  and against all damages, losses, and costs that might be caused by:
+</p>
+<ul>
+  <li>Your failure to comply with the terms of the above agreement</li>
+  <li>
+    Third party claim(s) of their rights and IPR being violated/effected by your
+    article(s) submitted to us.
+  </li>
+</ul>
+        </div>
+    
+        <div id="kc-terms-61_TandC" style="display:none;">
+<h2>
+  By entering the contest, each participant/ contestant warrants that the
+  participant meets the entry requirements stated and accepts the following
+  terms and conditions:
+</h2>
+<ul>
+  <li>
+    The participant/ contestant thereof acknowledges that the solution submitted
+    will be an original work created solely by the participant/ contestant, and
+    that the solution does not infringe on copyrights, trademarks, moral rights,
+    rights of privacy/publicity or intellectual property rights of any person or
+    entity, and that no other party has any right, title, claim, or interest in
+    the solution.
+  </li>
+  <li>
+    The application must not contain content where any person/s would be
+    required to undertake actions that is inappropriate, indecent, obscene,
+    violent, hateful, tortuous, defamatory, slanderous; that promotes racism or
+    hatred against any group or individual or that promotes discrimination based
+    on race, sex, religion, nationality, disability, sexual orientation or age;
+    or that is unlawful, in violation of or contrary to the laws or regulations
+    in the state or province where the application is developed.
+  </li>
+  <li>
+    The participant/contestant thereof is the sole author of the solution and
+    that it is the team's original work.
+  </li>
+  <li>
+    The participant/contestant has not licensed or disposed of any rights in the
+    solution that would conflict with any of TCS's use (if any).
+  </li>
+  <li>
+    TCS does not claim ownership rights in your works or other materials posted
+    by the participant/ contestant
+  </li>
+  <li>
+    For the sole purpose of enabling TCS to make participant/ contestant's
+    solution available through TCS portal , the participant/ contestant grant's
+    TCS a non-exclusive, royalty-free license to reproduce, distribute,
+    re-format, store, prepare derivative works based on, and publicly display
+    participant/ contestant content. Participant/ contestant agrees not to
+    distribute any part of the portal other than participant/ contestant content
+    in any medium other than as permitted in these terms and conditions.
+  </li>
+  <li>
+    Display or publication of any entry on a TCS website does not indicate the
+    entrant will be selected as a winner. TCS will not be required to pay any
+    additional consideration or seek any additional approval in connection with
+    such use.
+  </li>
+  <li>
+    By entering this Contest, all entrants agree to release, discharge, and hold
+    harmless TCS from any claims, losses, and damages arising out of their
+    participation in this Contest or any Contest-related activities. TCS assumes
+    no responsibility for any error, omission, interruption, deletion, defect,
+    or delay in operation or transmission; communications line failure; theft or
+    destruction of or unauthorized access to Contest entries or entry forms; or
+    alteration of entries or entry forms. TCS is not responsible for any
+    problems with or technical malfunction of any telephone network or lines,
+    computer online systems, servers or providers, computer equipment, software,
+    failure of any email entry to be received on account of technical problems
+    or traffic congestion on the Internet or at any website, human errors of any
+    kind, or any combination thereof, including any injury or damage to
+    entrants' or any other persons' computers related to or resulting from
+    participation, uploading or downloading of any materials related to in this
+    Contest.
+  </li>
+  <li>
+    Except for any liability that cannot be excluded by applicable law, TCS
+    excludes all liability (including negligence), for any personal injury; or
+    any loss or damage; whether direct, indirect, special or consequential,
+    arising in any way in relation to the contest, including, but not limited
+    to, where arising out of the following: (a) any technical difficulties or
+    equipment malfunction (whether or not under TCS' control); (b) any theft,
+    unauthorized access or third party interference; (c) any tax liability
+    incurred by a contestant; or (d) use of the prize
+  </li>
+  <li>
+    TCS reserves the right, at its sole discretion, to cancel or terminate the
+    Contest, at any time it deems fit and proper. No claims or representations
+    shall be entertained in this regard.
+  </li>
+  <li>
+    TCS reserves the right to relax any of these restrictions if permitted by
+    law before the start of the qualification round.
+  </li>
+  <li>
+    All contestants must have access to the Internet, a valid postal address,
+    and a valid email address in order to enter the contest.
+  </li>
+  <li>
+    TCS reserves the right to verify eligibility and to adjudicate on any
+    dispute at any time. TCS will be the sole authority to decide the winners of
+    the contest and decision of TCS will be final and binding on all the
+    contestants. TCS reserves the right to disqualify any contestant or entries
+    or forfeit any prize contestant is eligible to receive, where TCS reasonably
+    (a) suspects any unlawful or improper conduct, such as infringing a third
+    party's intellectual property rights, or (b) believes that contestant has
+    provided any false information for participation in the contest, attempted
+    or tampered or interfered with the administration of the contest or has
+    otherwise been a breach of these contest terms and conditions (c) submitting
+    content that violates any applicable law
+  </li>
+  <li>
+    By participating in the contest, participant/ contestant understand and
+    accepts that TCS may use the personal information provided by contestant
+    during registration and in any subsequent communications to administer the
+    contest. TCS may use, disclose or transfer the personal information of the
+    contestant for contest related purposes or activities, within a country or
+    overseas including inter-alia disclosing it to other organizations or third
+    parties that assist with the contest, displaying it on the website etc. TCS
+    will protect the personal information in accordance with applicable privacy
+    legislation and its privacy policy.
+  </li>
+  <li>
+    Except as required by law, TCS makes no warranties, express or implied in
+    connection with the contest
+  </li>
+  <li>
+    TCS shall not be liable in any way if the performance of obligations
+    hereunder is delayed or becomes impossible by reason of any Act of God, war,
+    fire, earthquake, strike, sickness, accident, civil commotion or any other
+    cause
+  </li>
+  <li>
+    The candidate must be at least eighteen (18) years old or the age of
+    majority in his/her country of residence (whichever is greater) at the time
+    of his/her initial registration for TCS CodeVita.
+  </li>
+  <li>
+    Contestant shall fully indemnify and hold TCS harmless for and against all
+    damages, losses, and costs that might be caused by: (1) Contestant's acts or
+    omissions in relation to the Contest (including use or acceptance of any
+    prize) (2) Contestant's failure to comply with the terms of the above
+    agreement
+  </li>
+  <li>
+    In case of discretionary decisions, those taken by the TCS will be final and
+    binding.
+  </li>
+  <li>
+    All communications between TCS and the contestant will only be in English.
+  </li>
+  <li>
+    By accepting a prize, the contestant agrees that TCS and its agents may use
+    the contestant's name/nickname/screen name, likeness and statements without
+    compensation to promote the Contest, including displaying it publicly on its
+    website. Contestant's name/nickname/screen name, will also be displayed
+    during the contest on its website.
+  </li>
+  <li>
+    The Contestant understands and agrees that nothing in these terms and
+    conditions, a submission into the Contest, or an award of a prize may be
+    construed as an offer or contract of employment with TCS.
+  </li>
+  <li>
+    All disputes or claims arising out of or relating to the contest will be
+    governed by the laws of the State of New South Wales, Australia and will be
+    subject to jurisdiction of the courts in the State of New South Wales,
+    Australia
+  </li>
+  <li>
+    The data submitted by a contestant at the time of registration can be
+    accessed by TCS for market research and analytics, contest promotions and
+    reach, without any disclosure of the contestant's personal data(PII), for
+    example - name, email id, etc. In cases of the contestant ranking among the
+    Top 3, he/she/they consent to TCS's use of PII including Name, Country,
+    Institute Name and photograph and inclusion in the Hall of Fame digital
+    album on the CodeVita site, located at codevita.tcsapps.com.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+</ul>
+        </div>
+        <div id="kc-terms-11_TandC" style="display:none;">
+<h2>Notice</h2>
+<ul>
+  <li>
+    REQUEST YOU TO PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY. BY
+    PARTICIPATING IN THIS CONTEST, YOU AGREE TO BE BOUND BY THE TERMS AND
+    CONDITIONS
+  </li>
+  <li>
+    BELOW AND STRICTLY ADHERE TO THE SAME. CLICKING ON THE "I AGREE" IMPLIES
+    THAT YOU HAVE READ, UNDERSTOOD, AGREED AND ACCEPTED ALL THE TERMS AND
+    CONDITIONS OF THIS AGREEMENT
+  </li>
+
+  <li>
+    The Contest is open to legal residents who fulfil the eligibility criteria
+    and who are eighteen (18) years of age or older at the time of entry. TCS
+    reserves the right to take steps to verify the age and eligibility of the
+    participants and seek any document(s) to verify the same.
+  </li>
+
+  <li>
+    No purchase of any sort is necessary and there is no charge/fee for entering
+    or participating in the Contest. The sole consideration required from
+    entrants is that they agree to be legally bound by these Terms. The
+    participant enters in this Contest at his or her own will and TCS is not in
+    any way obligated or liable for any loss, damage or costs that the
+    participant may suffer or incur and nothing is payable to participant for
+    participating in the Contest.
+  </li>
+
+  <li>
+    The Contest and any and all information provided in the Contest is on 'AS
+    IS' basis without any warranty of any kind, express or implied, whatsoever.
+    In no event shall TCS or any of its affiliates, subsidiaries, employees,
+    officers, directors and agents ("Related Parties") be liable for any direct,
+    special, consequential, incidental or indirect damages whatsoever arising
+    out of the Contest, your participation or inability to participate, access
+    and use of or inability to use, reliance on, the information provided in or
+    relating to the Contest, even if TCS is aware of the possibility of such
+    losses, damages and known defects.
+  </li>
+
+  <li>
+    The information submitted by you to TCS is true and correct and not in
+    violation of any agreement or understanding you have with any other party.
+  </li>
+  <li>
+    The participants warrant that the each solution/entry submitted by him/her
+    is an original creation and work created/authored solely by him/her, and
+    that the solution submitted by them and/or use of the same by TCS in
+    accordance with these terms does not infringe on copyrights, trademarks,
+    patents, designs, moral rights, rights of privacy/publicity or intellectual
+    property rights of any person or entity, and that no other party has any
+    right, title, claim, or interest in the solution.
+  </li>
+
+  <li>
+    The solution must not contain content where any person/s would be required
+    to undertake actions that is inappropriate, indecent, obscene, violent,
+    hateful, tortuous, defamatory, slanderous; that promotes racism or hatred
+    against any group or individual or that promotes discrimination based on
+    race, sex, religion, nationality, disability, sexual orientation or age; or
+    that is unlawful, in violation of or contrary to the laws or regulations in
+    the state or province where the solution is developed.
+  </li>
+
+  <li>
+    The participants have not licensed or disposed of, or encumbered any rights
+    in the solution submitted for the Contest that would conflict with these
+    terms, including without limitation, any rights granted to TCS in or to the
+    same.
+  </li>
+  <li>
+    Participants who have submitted their solution is/are either the copyright
+    owners of any and all the component parts of that work or are submitting the
+    work under license from a copyright owner or otherwise as permitted by law.
+    Except as agreed to herein, TCS does not claim ownership rights in your
+    works or other materials posted by you. You acknowledge and agree that
+    solution may be subject to security, vulnerability, performance,
+    architecture, usability, plagiarism, open source and such other tests and
+    assessments as TCS may in its sole discretion decide.
+  </li>
+  <li>
+    For the sole purpose of enabling TCS to make your solution available through
+    TCS portal you grant TCS a non-exclusive, royalty-free license to reproduce,
+    distribute, re-format, store, prepare derivative works based on, and
+    publicly display your content. You agree not to distribute any part of the
+    portal other than your content in any medium other than as permitted in
+    these Terms and Conditions.
+  </li>
+
+  <li>
+    Display or publication of any entry on a TCS website does not indicate the
+    participants will be selected as a winner. TCS will not be required to pay
+    any additional consideration or seek any additional approval in connection
+    with such use
+  </li>
+
+  <li>
+    TCS is free to copy, reproduce, distribute, disclose and publicly display
+    contest entries without limitations or obligation of any kind. TCS is also
+    free to use any ideas, concepts, know-how, methods, processes, solutions or
+    techniques contained in such entries/submissions in any manner and for any
+    purpose without limitations or obligations of any kind, in TCS solutions,
+    products or other offerings, as is or with modifications, alterations,
+    adaptations or other derivative works of the same. TCS reserves the right to
+    analyse and summarize data, information or other materials that are
+    collected and also reserves the right to publish, distribute, share
+    summaries of the data, information or other materials collected with other
+    business partners without limitations or obligations of any kind. You give
+    up all copyright and other intellectual property claims that you may have
+    against TCS for any use of your entries/submissions/solutions in any manner
+    and for any purpose. TCS will have no liability to you for receipt, review,
+    use or disclosure of any and all information disclosed or submitted by you.
+  </li>
+
+  <li>
+    By entering this Contest, all entrants agree to release, discharge, and hold
+    harmless TCS from any claims, losses, and damages arising out of their
+    participation in this Contest or any Contest-related activities. Neither TCS
+    nor any Related Party has any control over communication networks and shall
+    not be responsible for entries lost in transmission, or received late due to
+    high online traffic levels, or technical malfunctions or otherwise. TCS
+    assumes no responsibility or liability for any error, omission,
+    interruption, deletion, defect, or delay in operation or transmission;
+    communications line failure; theft or destruction of or unauthorized access
+    to Contest entries or entry forms; or corruption, misdirection or alteration
+    of entries or entry forms. No claims or communications shall be entertained
+    in this regard TCS reserves the right, at its sole discretion, to extend,
+    shorten, discontinue, prematurely withdraw, change, alter, modify, cancel or
+    terminate the Contest or any part thereof or these terms including the
+    eligibility criteria, at any time it deems fit and proper without prior
+    notice, during its validity or as may be required in view of business
+    exigencies and/or changes by regulatory authority and/or statutory changes
+    and the same shall be binding on the participants. No claims or
+    representations shall be entertained in this regard. Participants agree that
+    no liability shall attach to TCS or any Related Parties as a result thereof
+    and that the exercise of such discretion shall not result in any
+    compensation being payable or paid to any participant or other person.
+  </li>
+
+  <li>
+    All contestants must have access to the internet, a valid postal address,
+    and a valid email address in order to enter the Contest.
+  </li>
+  <li>
+    Mere participation in the Contest and sending/submitting the entries does
+    not entitle the participants to win the Contest. The selection process may
+    vary and shall be as per the TCS' sole discretion. The participants or any
+    third party shall have no right to question the process of selections. TCS
+    may determine the correctness, quality and validity of the Contest entries
+    in its sole discretion.
+  </li>
+  <li>
+    TCS reserves the absolute right to disqualify the participant(s)/winner(s),
+    if it considers that participant(s)/winner(s) has/have used improper means
+    to participate in the Contest; any information provided by
+    participant(s)/winner(s) is found to be incorrect, inaccurate, false,
+    misleading in any manner; or due to any other valid reason that may nullify
+    participant's participation/win in the Contest. TCS reserves the right to
+    verify eligibility and to adjudicate on any dispute at any time. You agree
+    that TCS will be the sole authority to: decide the winners of the contest
+    and decision of TCS will be final and binding on all the contestants;
+    adjudicate any disagreement / difference of opinion / dispute regarding the
+    interpretation of the Terms or otherwise arising from this Contest and the
+    activities undertaken hereunder:
+  </li>
+
+  <li>
+    To enable registration and/or authentication of participants and/or to make
+    the prize available to the winner(s), personally identifiable information,
+    including without limitation, name, complete address, date of birth,
+    citizenship details, etc. of the entrant/winner ("Personal Information") may
+    be collected by TCS to enable TCS to administer and promote the Contest and
+    the winner. If the entrants do not truthfully provide all requested Personal
+    Information, TCS may determine that such participants are not eligible to
+    win the prize in the Contest. It is the participant's responsibility to
+    ensure that their Personal Information is always updated and accurate in
+    order to be able to receive the gratification/notification in time
+  </li>
+  <li>
+    You acknowledge and agree that the Personal Information of the winners may
+    be provided by TCS to others assisting TCS in this regard, including its
+    affiliates, associates, authorities, agents, sponsors, employees, prize
+    suppliers, distributors, deliverers and service providers (as applicable).
+  </li>
+  <li>
+    The participants hereby agree and undertake that mere
+    announcement/declaration of being announced as a winner shall not entitle
+    him/her/them to the prize. Only upon fulfilling all Terms mentioned herein,
+    to the satisfaction of TCS, shall the winning be validated. Further, if the
+    Prize is declined or the selected winner cannot be contacted within 14 days
+    after declaration of the Contest result using details provided by the
+    participants, TCS will be entitled to select another winner at their own
+    discretion
+  </li>
+  <li>
+    TCS may substitute the prize and/or prizes with others as determined by TCS
+    in its sole discretion. Participants agree that no liability shall attach to
+    TCS or any Related Parties as a result thereof and that the exercise of such
+    discretion shall not result in any compensation being payable or paid to any
+    participant or other person
+  </li>
+  <li>
+    Income tax, gift tax or any other statutory taxes, duties or levies as may
+    be applicable from time to time, arising out of prize, shall be borne by the
+    winner(s) for the respective prize. In case the winner fails to comply with
+    the applicable laws and pay requisite taxes, duties or levies, if any, the
+    winner shall indemnify TCS of any losses, claims, expenses, costs and
+    actions for the same.
+  </li>
+  <li>
+    If required under the applicable law, the winner may be requisitioned to pay
+    for the TDS (Tax Deducted at Source) applicable for his/ her prize or any
+    other statutory tax, duty or levy as may be applicable. However if the
+    winner does not agree to comply with the said requisition and pay the TDS or
+    such other applicable statutory tax, duty or levy, an alternative winner
+    selected by TCS in its sole discretion who agrees to pay the same will be
+    chosen. Prior payment of the same to the government authority and submission
+    of proof thereof to TCS shall be a condition precedent for delivery of
+    prizes to the winner
+  </li>
+  <li>
+    The participant(s) hereby agree and undertake that he/she shall not accept
+    or undertake to accept/give or undertake to give, either directly or
+    indirectly, any gifts, commission or other favour, of any kind whatsoever,
+    to facilitate their winning the Contest. Any knowledge of such an act shall
+    lead to immediate disqualification of such participant(s) and TCS shall be
+    entitled to take any/all actions against such entrants, as deemed fit by it.
+  </li>
+  <li>
+    Participation in the Contest and/or acceptance of the prize constitutes
+    permission for TCS and Related Parties to use or click photographs, exhibit
+    or portray you as the participant / Contest winner(s) (as applicable) and/or
+    publish any content submitted by you. The winner further grants irrevocable
+    consent in perpetuity to use, edit, exhibit, publish and/or exploit the
+    same, in all forms of mode and media at any time without the further
+    knowledge or consent and without any compensation whatsoever. Prize winner
+    must decline the Prize if he or she does not want to participate in any
+    publicity relating to the Prize.
+  </li>
+
+  <li>
+    In case your entry/solution submitted by you, or on your behalf, is adjudged
+    to be a winner, you hereby irrevocably assign to TCS all right, title,
+    ownership and interest worldwide in and to the solution submitted and all
+    applicable intellectual property rights related to the solution, including
+    without limitation, copyrights, trademarks, trade secrets, patents, moral
+    rights, contract and licensing rights, know-how (the "Proprietary Rights").
+    This assignment shall be binding on all legal heirs, successors and assigns
+    of the participants. You retain no rights to use the Proprietary Rights and
+    agree not to challenge the validity of TCS ownership in the solution and
+    Proprietary Rights. For any rights that cannot be assigned under the
+    applicable law, you hereby unconditionally and irrevocably waive the
+    enforcement of such rights, and all claims and causes of action of any kind
+    against TCS with respect to such rights, and agree, at TCS' request and
+    expense, to consent to and join in any action to enforce such rights.
+    Notwithstanding the provisions of the Indian Copyright Act, 1957, or any
+    other law in any country, the assignment shall not lapse or the right
+    transferred therein revert to assignor, even if TCS does not exercise the
+    rights under assignment within a period of one year from the date of this
+    assignment or any other term prescribed in any other law in any country. You
+    agree to cooperate with TCS or its designee, both during and after the term
+    of this agreement/Contest, to provide details and execute, when requested,
+    any other documents (including without limitation, assignments or
+    declarations or no-objections) deemed necessary by TCS to grant, assign and
+    transfers to TCS all right, title and interest in and to all solution and in
+    and to any and all Proprietary Rights thereto and give TCS all assistance as
+    may be otherwise necessary for protection, enforcement, registration and
+    maintenance of any such solution and associated intellectual property rights
+    worldwide.
+  </li>
+  <li>
+    Any student who is from institutions or universities in India, if found
+    registering for GLOBAL Phase Pre-Qualifier would be disqualified.
+  </li>
+  <li>
+    You fully indemnify and hold us (Tata Consultancy Services Limited) and
+    Related Parties harmless for and against all damages, losses, and costs
+    (including reasonable attorney or legal costs) that might be caused by
+  </li>
+  <li>Your failure to comply with the terms of the above agreement.</li>
+  <li>
+    Third party claim(s) of their rights and/or IPR being
+    violated/misappropriated by your submissions made for the Contest
+  </li>
+  <li>Any wilful misconduct, fraud or malfeasance</li>
+  <li>
+    The data submitted by a contestant at the time of registration can be
+    accessed by TCS for market research and analytics, contest promotions and
+    reach, without any disclosure of the contestant's personal data(PII), for
+    example - name, email id, etc. In cases of the contestant ranking among the
+    Top 3, he/she/they consent to TCS's use of PII including Name, Country,
+    Institute Name and photograph and inclusion in the Hall of Fame digital
+    album on the CodeVita site, located at codevita.tcsapps.com.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+</ul>
+<h2>Indemnification</h2>
+<ul>
+  <li>
+    Failure to exercise or delay in exercising any right or remedy under these
+    Terms or law by TCS will not constitute a waiver of rights or remedy nor
+    shall it prevent exercising that right or remedy in whole or in part in
+    future.
+  </li>
+  <li>
+    The invalidity or unenforceability for any reason of any part of these Terms
+    shall not prejudice or affect the validity or enforceability of the
+    remaining parts and each part of these Terms is distinct and at all times
+    severable from the rest of the Terms.
+  </li>
+  <li>
+    These terms and conditions form a legally binding agreement between you and
+    TCS and is the entire agreement between you and TCS regarding the subject
+    matter hereof and supersedes any prior or contemporaneous, conflicting or
+    additional understandings or agreements or communications (written or oral).
+    Please proceed only if you accept all the conditions enumerated herein
+    above, out of your free will and consent.
+  </li>
+</ul>
+        </div>
+        <div id="kc-terms-86_TandC" style="display:none;">
+<h2>参与者/参赛选手参加比赛，即表明其已确认并同意以下条款与条件：</h2>
+<ul>
+  <li>
+    候选人在首次注册 TCS CodeVita 时必须至少年满十八 (18)
+    岁或他/她居住国家/地区的成年年龄（以较大者为准）。
+  </li>
+  <li>
+    参与者/参赛选手确认：其提交的解决方案将是由他/她单独创作的原创作品，该解决方案不侵犯任何个人或实体的版权、商标、人身权利、隐私权/公开权或知识产权，且其他任何人对该解决方案都不享有任何权利、所有权、权利主张或者利益。
+  </li>
+  <li>
+    应用程序不得包含要求任何人采取不适当、不雅、淫亵、暴力、憎恨、扭曲、诽谤、中伤等行为的内容；不得包含促推种族主义或对任何团体或个人的仇恨或助长基于种族、性别、宗教、国籍、残疾、性取向或年龄的歧视的内容；不得包含不法或是违反应用程序开发地所在国家或省份的法律法规的内容。
+  </li>
+  <li>参与者/参赛选手是解决方案的唯一作者，方案是团队的原创作品。</li>
+  <li>
+    参与者/参赛选手没有许可或处置解决方案中的会与TCS的使用（如有）相冲突的任何权利。
+  </li>
+  <li>
+    提交解决方案的参与者需是该作品的版权所有者，或是在版权所有者的许可之下发布作品，或者是法律允许的其他情况。TCS不会就您的作品或您发布的其他材料主张所有权
+  </li>
+  <li>
+    仅为使我们可以将您的作品放在我们的网站上之目的，您授予TCS一个非独占的、免版税的许可，以复制、分发、重新排版、存储、在该基础上制作衍生作品，并公开展示您的内容。除非本条款与条件允许，您同意不会把网站上除您作品以外的其他任何内容发布在其他任何媒介上。
+  </li>
+  <li>
+    在TCS网站上的任何作品的展示或发布都不代表参赛者将被选为获胜者。TCS的该等使用将不会被要求支付任何额外的对价或寻求任何额外的批准。
+  </li>
+  <li>
+    参赛者参与此竞赛，即表明其同意免除TCS并同意确保TCS免于遭受任何因参赛者参与比赛或比赛相关活动而引起的任何索赔、损失和赔偿金。TCS不对以下事项承担任何责任：任何错误、遗漏、中断、删除、缺陷或延迟操作或传输；通讯失败；盗窃、破坏或擅自进入参赛作品或参赛表格；更改参赛作品或参赛表格。TCS亦不对以下事项承担任何责任：任何电话网络或线路的任何问题或技术故障、计算机网络系统、服务器或供应商、计算机设备、软件、因技术问题或互联网或任何网站的卡塞导致的接收任何邮件/作品的失败，任何人为错误，或前述事项的任何组合，包括因参与、上传或下载任何与本竞赛相关的资料而引起或与之相关的任何人身伤害或是对参赛者或他人电脑的任何损害。
+  </li>
+  <li>
+    TCS有权自行决定在其认为适当的任何时间取消或终止比赛。参赛者不得就此主张任何索赔或进行交涉。
+  </li>
+  <li>在法律允许的情况下，在资格赛开始前，TCS保留放宽任何限制的权利。</li>
+  <li>
+    TCS保留核实参赛者资格的权利，并有权在任何时间对任何争议作出裁决。TCS将是决定比赛优胜者的唯一权威机构，而TCS的决定对所有参赛者都是最终决定并具有约束力。
+  </li>
+  <li>
+    内部的利益相关者在比赛期间不得试图通过对任何机构的参赛学生进行指导、激励/技术/语言的特定会话来影响比赛的活动/流程。招聘团队应确保本文件中所包含的所有指导方针的遵照执行
+  </li>
+</ul>
+
+<h2>赔偿</h2>
+<ul>
+  <li>您未能遵守上述协议的条款。</li>
+  <li>您向我们提交的作品侵犯/影响了任何第三方的任何权利或知识产权</li>
+</ul>
+
+<h2>
+  By entering the contest, each participant/ contestant confirms and agrees to
+  the following terms and conditions:
+</h2>
+<ul>
+  <li>
+    The candidate must be at least eighteen (18) years old or the age of
+    majority in his/her country of residence (whichever is greater) at the time
+    of his/her initial registration for TCS CodeVita.
+  </li>
+  <li>
+    The participant/ contestant thereof acknowledges that the solution submitted
+    will be an original work created solely by him/her, and that the solution
+    does not infringe on copyrights, trademarks, moral rights, rights of
+    privacy/publicity or intellectual property rights of any person or entity,
+    and that no other party has any right, title, claim, or interest in the
+    solution
+  </li>
+  <li>
+    The application must not contain content where any person/s would be
+    required to undertake actions that is inappropriate, indecent, obscene,
+    violent, hateful, tortuous, defamatory, slanderous; that promotes racism or
+    hatred against any group or individual or that promotes discrimination based
+    on race, sex, religion, nationality, disability, sexual orientation or age;
+    or that is unlawful, in violation of or contrary to the laws or regulations
+    in the state or province where the application is developed.
+  </li>
+  <li>
+    The participant/contestant thereof is the sole author of the solution and
+    that it is the team's original work.
+  </li>
+  <li>
+    The participant/contestant has not licensed or disposed of any rights in the
+    solution that would conflict with any of TCS use (if any).
+  </li>
+  <li>
+    Participants who have submitted their solution are either the copyright
+    owners of the component parts of that work or are posting the work under
+    license from a copyright owner or otherwise as permitted by law. TCS does
+    not claim ownership rights in your works or other materials posted by you.
+  </li>
+  <li>
+    For the sole purpose of enabling us to make your solution available through
+    our portal you grant TCS a non-exclusive, royalty-free license to reproduce,
+    distribute, re-format, store, prepare derivative works based on, and
+    publicly display your content. You agree not to distribute any part of the
+    portal other than your content in any medium other than as permitted in
+    these Terms and Conditions.
+  </li>
+  <li>
+    Display or publication of any entry on a TCS website does not indicate the
+    entrant will be selected as a winner. TCS will not be required to pay any
+    additional consideration or seek any additional approval in connection with
+    such use.
+  </li>
+  <li>
+    By entering this Contest, all entrants agree to release, discharge, and hold
+    harmless TCS from any claims, losses, and damages arising out of their
+    participation in this Contest or any Contest-related activities. TCS assumes
+    no responsibility for any error, omission, interruption, deletion, defect,
+    or delay in operation or transmission; communications line failure; theft or
+    destruction of or unauthorized access to Contest entries or entry forms; or
+    alteration of entries or entry forms. TCS is not responsible for any
+    problems with or technical malfunction of any telephone network or lines,
+    computer online systems, servers or providers, computer equipment, software,
+    failure of any email entry to be received on account of technical problems
+    or traffic congestion on the Internet or at any website, human errors of any
+    kind, or any combination thereof, including any injury or damage to
+    entrants' or any other persons' computers related to or resulting from
+    participation, uploading or downloading of any materials related to in this
+    Contest.
+  </li>
+  <li>
+    TCS reserves the right, at its sole discretion, to cancel or terminate the
+    Contest, at any time it deems fit and proper. No claims or representations
+    shall be entertained in this regard.
+  </li>
+  <li>
+    TCS reserves the right to relax any of these restrictions if permitted by
+    law before the start of the Qualification Round.
+  </li>
+  <li>
+    All contestants must have access to the Internet, a valid postal address,
+    and a valid email address in order to enter the contest.
+  </li>
+  <li>
+    TCS reserves the right to verify eligibility and to adjudicate on any
+    dispute at any time. TCS will be the sole authority to decide the winners of
+    the contest and decision of TCS will be final and binding on all the
+    contestants.
+  </li>
+  <li>
+    At no point of time during the contest should internal stakeholders attempt
+    to influence the events/ flow of the contest by way of guidance, pep up/
+    technology/ language specific sessions for students in any institute
+    participating for the contest. TAG teams to ensure complete compliance to
+    all guidelines enclosed in this document.
+  </li>
+  <li>
+    The data submitted by a contestant at the time of registration can be
+    accessed by TCS for market research and analytics, contest promotions and
+    reach, without any disclosure of the contestant’s personal data(PII), for
+    example - name, email id, etc. In cases of the contestant ranking among the
+    Top 3, he/she/they consent to TCS’s use of PII including Name, Country,
+    Institute Name and photograph and inclusion in the Hall of Fame digital
+    album on the CodeVita site, located at codevita.tcsapps.com.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+</ul>
+<h2>Indemnifications</h2>
+<p>
+  You fully indemnify and hold us (Tata Consultancy Services Limited) harmless
+  for and against all damages, losses, and costs that might be caused by:
+</p>
+<ul>
+  <li>Your failure to comply with the terms of the above agreement</li>
+  <li>
+    Third party claim(s) of their rights and IPR being violated/effected by your
+    article(s) submitted to us.
+  </li>
+</ul>
+        </div>
+        <div id="kc-terms-44_TandC" style="display:none;">
+<h2>
+  By entering the contest, each contestant entrant (a "contestant") confirms
+  they understand and agree the following terms and conditions apply to any and
+  every stage of their participation: :
+</h2>
+<ul>
+  <li>
+    The candidate must be at least eighteen (18) years old or the age of
+    majority in their country of residence (whichever is greater) at the time of
+    their initial registration for TCS CodeVita.
+  </li>
+  <li>
+    The contestant acknowledges that the solution submitted will be an original
+    work created solely by him/her, and the contestant confirms that the
+    submission does not infringe on any or intellectual property rights of any
+    person or entity including but not limited to copyrights, trademarks, moral
+    rights, rights of privacy/publicity etc, and no other party has any
+    proprietary interest in the solution including but not limited to any right,
+    title, claim, to ownership or makes any contribution whatsoever to its
+    content.. Contestants who have submitted an entry are either the copyright
+    owners of the component parts of that work or are posting the work under
+    license from a copyright owner or otherwise as permitted by law..
+  </li>
+  <li>
+    The application submitted will be disqualified if it contains content where
+    any person/s would be required to undertake inappropriate actions or see
+    inappropriate content such as , indecent, obscene, violent, hateful,
+    tortuous, defamatory, slanderous and/or promotes racism or hatred against
+    any group or individual or that promotes discrimination based on race, sex,
+    religion, nationality, disability, sexual orientation or age; or that is
+    unlawful, in violation of or contrary to the laws or regulations in the
+    state or province where the application is developed.
+  </li>
+  <li>
+    The contestant is the sole author of the submission and/or that it is the
+    contestant's original work.
+  </li>
+  <li>
+    The /contestant has not licensed or otherwise sold, transferred or disposed
+    of any rights whatsoever in the submission that would conflict with any use
+    in this competition or restrict its use in the future by TCS (if any) in
+    accordance with these rules. TCS does not claim ownership rights in your
+    works or other materials posted by you as a result of your submission as a
+    contestant.
+  </li>
+  <li>
+    Each contestant's entry shall be deemed to grant TCS a non-exclusive,
+    royalty-free license to reproduce, distribute, re-format, store, prepare
+    derivative works based on, and publicly display all and/or any part of the
+    submission content solely for the purpose of enabling TCS to make the
+    submission solution available through the TCS portal. Each Contestant shall
+    not distribute any part of the portal other than their own content in any
+    medium, other than as permitted in these Terms and Conditions.
+  </li>
+  <li>
+    Each contestant hereby authorizes TCS to display or otherwise make a
+    publication of any entry on a TCS website. Any such promotion does not
+    indicate the entry will be selected as a winner. Contestants release,
+    discharge, and hold harmless TCS from any claims, losses, and damages
+    arising out of participation in this Contest or any Contest-related
+    activities. TCS assumes no responsibility for any error, omission,
+    interruption, deletion, defect, or delay in operation or transmission;
+    communications line failure; theft or destruction of or unauthorized access
+    to Contest entries or entry forms; or alteration of entries or entry forms.
+    TCS is not responsible for any problems with or technical malfunction of any
+    telephone network or lines, computer online systems, servers or providers,
+    computer equipment, software, failure of any email entry to be received on
+    account of technical problems or traffic congestion on the Internet or at
+    any website, human errors of any kind, or any combination thereof, including
+    any injury or damage to entrants' or any other persons' computers related to
+    or resulting from participation, uploading or downloading of any materials
+    related to in this Contest.
+  </li>
+  <li>
+    TCS reserves the right, at its sole discretion, to cancel or terminate the
+    Contest, at any time and accepts no liability to any contestant on such
+    termination.
+  </li>
+  <li>
+    TCS reserves the right to relax any of these restrictions if permitted by
+    law before the start of the Qualification Round.
+  </li>
+  <li>
+    All contestants must have access to the Internet, a valid postal address,
+    and a valid email address in order to enter the contest.
+  </li>
+  <li>
+    At no point in time during the contest until the winners are announced
+    should any TCS internal stakeholders or their agents attempt to influence
+    the outcome including but not limited to events/ flow of the contest by way
+    of guidance, pep up/ technology/ language specific sessions for anyone
+    and/or any institute participating in the contest
+  </li>
+  <li>
+    The data submitted by a contestant at the time of registration can be
+    accessed by TCS for market research and analytics, contest promotions and
+    reach, without any disclosure of the contestant's personal data(PII), for
+    example - name, email id, etc. In cases of the contestant ranking among the
+    Top 3, he/she/they consent to TCS's use of PII including Name, Country,
+    Institute Name and photograph and inclusion in the Hall of Fame digital
+    album on the CodeVita site, located at codevita.tcsapps.com.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+</ul>
+
+<h2>Indemnifications</h2>
+<p>
+  Contestants shall fully indemnify and hold TCS (Tata Consultancy Services
+  Limited) harmless for and against all damages, losses, and costs that might be
+  caused by:
+</p>
+<ul>
+  <li>
+    A contestant's failure to comply with the terms of entry for this
+    competition and/or
+  </li>
+  <li>
+    Third party claim(s) that their rights and IPR are violated / effected by a
+    contestant's submission here under.
+  </li>
+</ul>
+        </div>
+        <div id="kc-terms-852_TandC" style="display:none;">
+<h2>
+  By entering the contest, each participant/ contestantwarrants that the
+  participantmeets the entry requirements stated and accepts the following terms
+  and conditions:
+</h2>
+<ul>
+  <li>
+    The participant/ contestant thereof acknowledges that the solution submitted
+    will be an original work created solely by the participant/ contestant, and
+    that the solution does not infringe on copyrights, trademarks, moral rights,
+    rights of privacy/publicity or intellectual property rights of any person or
+    entity, and that no other party has any right, title, claim, or interest in
+    the solution.
+  </li>
+  <li>
+    The application must not contain content where any person/s would be
+    required to undertake actions that is inappropriate, indecent, obscene,
+    violent, hateful, tortuous, defamatory, slanderous; that promotes racism or
+    hatred against any group or individual or that promotes discrimination based
+    on race, sex, religion, nationality, disability, sexual orientation or age;
+    or that is unlawful, in violation of or contrary to the laws or regulations
+    in the state or province where the application is developed.
+  </li>
+  <li>
+    The participant/contestant thereof is the sole author of the solution and
+    that it is the team's original work.
+  </li>
+  <li>
+    The participant/contestant has not licensed or disposed of any rights in the
+    solution that would conflict with any of TCS's use (if any).
+  </li>
+  <li>
+    TCS does not claim ownership rights in your works or other materials posted
+    by the participant/ contestant
+  </li>
+  <li>
+    For the sole purpose of enabling TCSto make participant/ contestant's
+    solution available through TCSportal , the participant/ contestant grant's
+    TCS a non-exclusive, royalty-free license to reproduce, distribute,
+    re-format, store, prepare derivative works based on, and publicly display
+    participant/ contestantcontent. Participant/ contestant agrees not to
+    distribute any part of the portal other than participant/ contestant content
+    in any medium other than as permitted in these terms and conditions.
+  </li>
+  <li>
+    Display or publication of any entry on a TCS website does not indicate the
+    entrant will be selected as a winner. TCS will not be required to pay any
+    additional consideration or seek any additional approval in connection with
+    such use.
+  </li>
+  <li>
+    By entering this Contest, all entrants agree to release, discharge, and hold
+    harmless TCS from any claims, losses, and damages arising out of their
+    participation in this Contest or any Contest-related activities. TCS assumes
+    no responsibility for any error, omission, interruption, deletion, defect,
+    or delay in operation or transmission; communications line failure; theft or
+    destruction of or unauthorized access to Contest entries or entry forms; or
+    alteration of entries or entry forms. TCS is not responsible for any
+    problems with or technical malfunction of any telephone network or lines,
+    computer online systems, servers or providers, computer equipment, software,
+    failure of any email entry to be received on account of technical problems
+    or traffic congestion on the Internet or at any website, human errors of any
+    kind, or any combination thereof, including any injury or damage to
+    entrants' or any other persons' computers related to or resulting from
+    participation, uploading or downloading of any materials related to in this
+    Contest.
+  </li>
+  <li>
+    Except for any liability that cannot be excluded by applicable law, TCS
+    excludes all liability (including negligence), for any personal injury; or
+    any loss or damage; whether direct, indirect, special or consequential,
+    arising in any way in relation to the contest, including, but not limited
+    to, where arising out of the following: (a) any technical difficulties or
+    equipment malfunction (whether or not under TCS' control); (b) any theft,
+    unauthorized access or third party interference; (c) any tax liability
+    incurred by a contestant; or (d) use of the prize
+  </li>
+  <li>
+    TCS reserves the right, at its sole discretion, to cancel or terminate the
+    Contest, at any time it deems fit and proper. No claims or representations
+    shall be entertained in this regard.
+  </li>
+  <li>
+    TCS reserves the right to relax any of these restrictions if permitted by
+    law before the start of the qualification round.
+  </li>
+  <li>
+    All contestants must have access to the Internet, a valid postal address,
+    and a valid email address in order to enter the contest.
+  </li>
+  <li>
+    TCS reserves the right to verify eligibility and to adjudicate on any
+    dispute at any time. TCS will be the sole authority to decide the winners of
+    the contest and decision of TCS will be final and binding on all the
+    contestants.
+  </li>
+  <li>
+    TCS reserves the right to disqualify any contestant or entries or forfeit
+    any prize contestant is eligible to receive, where TCS reasonably(a)
+    suspects any unlawful or improper conduct, such as infringing a third
+    party's intellectual property rights, or (b) believes that contestant has
+    provided any false information for participation in the contest, attempted
+    or tampered or interfered with theadministration of the contest or has
+    otherwise been a breach of these contest terms and conditions (c) submitting
+    content that violates any applicable law
+  </li>
+  <li>
+    By participating in the contest, participant/ contestant understand and
+    accepts that TCS may use the personal information provided by contestant
+    during registration and in any subsequent communications to administer the
+    contest. TCS may use, disclose or transfer the personal information of the
+    contestant for contest related purposes or activities,within a country or
+    overseas including inter-alia disclosing it to other organizations or third
+    parties that assist with the contest, displaying it on the website etc. TCS
+    will protect the personal information in accordance with applicable privacy
+    legislation and its privacy policy.
+  </li>
+  <li>
+    Except as required by law, TCS makes no warranties, express or implied in
+    connection with the contest
+  </li>
+  <li>
+    TCS shall not be liable in any way if the performance of obligations
+    hereunder is delayed or becomes impossible by reason of any Act of God, war,
+    fire, earthquake, strike, sickness, accident, civil commotion or any other
+    cause
+  </li>
+  <li>
+    The candidate must be at least eighteen (18) years old or the age of
+    majority in his/her country of residence (whichever is greater) at the time
+    of his/her initial registration for TCS CodeVita.
+  </li>
+  <li>
+    Contestant shall fully indemnify and hold TCS harmless for and against all
+    damages, losses, and costs that might be caused by: (1) Contestant's acts or
+    omissions in relation to the Contest (including use or acceptance of any
+    prize) (2) Contestant's failure to comply with the terms of the above
+    agreement
+  </li>
+  <li>
+    In case of discretionary decisions, those taken by the TCS will be final and
+    binding.
+  </li>
+  <li>
+    All communications between TCS and the contestant will only be in English.
+  </li>
+  <li>
+    By accepting a prize, the contestant agrees that TCS and its agents may use
+    the contestant's name/nickname/screen name, likeness and statements without
+    compensation to promote the Contest, including displaying it publicly on its
+    website.Contestant's name/nickname/screen name, will also be displayed
+    during the contest on its website.
+  </li>
+  <li>
+    The Contestant understands and agrees that nothing in these terms and
+    conditions, a submission into the Contest, or an award of a prize may be
+    construed as an offer or contract of employment with TCS.
+  </li>
+  <li>
+    The disputes or claims arising out of or relating to the contest will be
+    governed by and construed in accordance with the laws of the Hong Kong
+    Special Administrative Region of the People's Republic of China and will be
+    subject to jurisdiction of the courts of the Hong Kong Special
+    Administrative Region of the People's Republic of China.
+  </li>
+  <li>
+    The data submitted by a contestant at the time of registration can be
+    accessed by TCS for market research and analytics, contest promotions and
+    reach, without any disclosure of the contestant's personal data(PII), for
+    example - name, email id, etc. In cases of the contestant ranking among the
+    Top 3, he/she/they consent to TCS's use of PII including Name, Country,
+    Institute Name and photograph and inclusion in the Hall of Fame digital
+    album on the CodeVita site, located at codevita.tcsapps.com.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+</ul>
+        </div>
+        <div id="kc-terms-62_TandC" style="display:none;">
+<h2>
+  By entering the contest, each participant/ contestant warrants that the
+  participant meets the entry requirements stated and accepts the following
+  terms and conditions:
+</h2>
+<ul>
+  <li>
+    The participant/ contestant thereof acknowledges that the solution submitted
+    will be an original work created solely by the participant/ contestant, and
+    that the solution does not infringe on copyrights, trademarks, moral rights,
+    rights of privacy/publicity or intellectual property rights of any person or
+    entity, and that no other party has any right, title, claim, or interest in
+    the solution.
+  </li>
+  <li>
+    The application must not contain content where any person/s would be
+    required to undertake actions that is inappropriate, indecent, obscene,
+    violent, hateful, tortuous, defamatory, slanderous; that promotes racism or
+    hatred against any group or individual or that promotes discrimination based
+    on race, sex, religion, nationality, disability, sexual orientation or age;
+    or that is unlawful, in violation of or contrary to the laws or regulations
+    in the state or province where the application is developed.
+  </li>
+  <li>
+    The participant/contestant thereof is the sole author of the solution and
+    that it is the team's original work.
+  </li>
+  <li>
+    The participant/contestant has not licensed or disposed of any rights in the
+    solution that would conflict with any of TCS's use (if any).
+  </li>
+  <li>
+    TCS does not claim ownership rights in your works or other materials posted
+    by the participant/ contestant
+  </li>
+  <li>
+    For the sole purpose of enabling TCS to make participant/ contestant's
+    solution available through TCS portal , the participant/ contestant grant's
+    TCS a non-exclusive, royalty-free license to reproduce, distribute,
+    re-format, store, prepare derivative works based on, and publicly display
+    participant/ contestant content. Participant/ contestant agrees not to
+    distribute any part of the portal other than participant/ contestant content
+    in any medium other than as permitted in these terms and conditions.
+  </li>
+  <li>
+    Display or publication of any entry on a TCS website does not indicate the
+    entrant will be selected as a winner. TCS will not be required to pay any
+    additional consideration or seek any additional approval in connection with
+    such use.
+  </li>
+  <li>
+    By entering this Contest, all entrants agree to release, discharge, and hold
+    harmless TCS from any claims, losses, and damages arising out of their
+    participation in this Contest or any Contest-related activities. TCS assumes
+    no responsibility for any error, omission, interruption, deletion, defect,
+    or delay in operation or transmission; communications line failure; theft or
+    destruction of or unauthorized access to Contest entries or entry forms; or
+    alteration of entries or entry forms. TCS is not responsible for any
+    problems with or technical malfunction of any telephone network or lines,
+    computer online systems, servers or providers, computer equipment, software,
+    failure of any email entry to be received on account of technical problems
+    or traffic congestion on the Internet or at any website, human errors of any
+    kind, or any combination thereof, including any injury or damage to
+    entrants' or any other persons' computers related to or resulting from
+    participation, uploading or downloading of any materials related to in this
+    Contest.
+  </li>
+  <li>
+    Except for any liability that cannot be excluded by applicable law, TCS
+    excludes all liability (including negligence), for any personal injury; or
+    any loss or damage; whether direct, indirect, special or consequential,
+    arising in any way in relation to the contest, including, but not limited
+    to, where arising out of the following: (a) any technical difficulties or
+    equipment malfunction (whether or not under TCS' control); (b) any theft,
+    unauthorized access or third party interference; (c) any tax liability
+    incurred by a contestant; or (d) use of the prize
+  </li>
+  <li>
+    TCS reserves the right, at its sole discretion, to cancel or terminate the
+    Contest, at any time it deems fit and proper. No claims or representations
+    shall be entertained in this regard.
+  </li>
+  <li>
+    TCS reserves the right to relax any of these restrictions if permitted by
+    law before the start of the qualification round.
+  </li>
+  <li>
+    All contestants must have access to the Internet, a valid postal address,
+    and a valid email address in order to enter the contest.
+  </li>
+  <li>
+    TCS reserves the right to verify eligibility and to adjudicate on any
+    dispute at any time. TCS will be the sole authority to decide the winners of
+    the contest and decision of TCS will be final and binding on all the
+    contestants.
+  </li>
+  <li>
+    TCS reserves the right to disqualify any contestant or entries or forfeit
+    any prize contestant is eligible to receive, where TCS reasonably (a)
+    suspects any unlawful or improper conduct, such as infringing a third
+    party's intellectual property rights, or (b) believes that contestant has
+    provided any false information for participation in the contest, attempted
+    or tampered or interfered with the administration of the contest or has
+    otherwise been a breach of these contest terms and conditions (c) submitting
+    content that violates any applicable law
+  </li>
+  <li>
+    By participating in the contest, participant/ contestant understand and
+    accepts that TCS may use the personal information provided by contestant
+    during registration and in any subsequent communications to administer the
+    contest. TCS may use, disclose or transfer the personal information of the
+    contestant for contest related purposes or activities, within a country or
+    overseas including inter-alia disclosing it to other organizations or third
+    parties that assist with the contest, displaying it on the website etc. TCS
+    will protect the personal information in accordance with applicable privacy
+    legislation and its privacy policy.
+  </li>
+  <li>
+    Except as required by law, TCS makes no warranties, express or implied in
+    connection with the contest
+  </li>
+  <li>
+    TCS shall not be liable in any way if the performance of obligations
+    hereunder is delayed or becomes impossible by reason of any Act of God, war,
+    fire, earthquake, strike, sickness, accident, civil commotion or any other
+    cause
+  </li>
+  <li>
+    The candidate must be at least eighteen (18) years old or the age of
+    majority in his/her country of residence (whichever is greater) at the time
+    of his/her initial registration for TCS CodeVita.
+  </li>
+  <li>
+    Contestant shall fully indemnify and hold TCS harmless for and against all
+    damages, losses, and costs that might be caused by: (1) Contestant's acts or
+    omissions in relation to the Contest (including use or acceptance of any
+    prize) (2) Contestant's failure to comply with the terms of the above
+    agreement
+  </li>
+  <li>
+    In case of discretionary decisions, those taken by the TCS will be final and
+    binding.
+  </li>
+  <li>
+    All communications between TCS and the contestant will only be in English.
+  </li>
+  <li>
+    By accepting a prize, the contestant agrees that TCS and its agents may use
+    the contestant's name/nickname/screen name, likeness and statements without
+    compensation to promote the Contest, including displaying it publicly on its
+    website. Contestant's name/nickname/screen name, will also be displayed
+    during the contest on its website.
+  </li>
+  <li>
+    The Contestant understands and agrees that nothing in these terms and
+    conditions, a submission into the Contest, or an award of a prize may be
+    construed as an offer or contract of employment with TCS.
+  </li>
+  <li>
+    The disputes or claims arising out of or relating to the contest will be
+    governed by and construed in accordance with the laws of Republic of
+    Indonesia and will be subject to jurisdiction of the courts in Jakarta,
+    Indonesia.
+  </li>
+  <li>
+    The data submitted by a contestant at the time of registration can be
+    accessed by TCS for market research and analytics, contest promotions and
+    reach, without any disclosure of the contestant's personal data(PII), for
+    example - name, email id, etc. In cases of the contestant ranking among the
+    Top 3, he/she/they consent to TCS's use of PII including Name, Country,
+    Institute Name and photograph and inclusion in the Hall of Fame digital
+    album on the CodeVita site, located at codevita.tcsapps.com.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+</ul>
+        </div>
+        <div id="kc-terms-82_TandC" style="display:none;">
+<h2>
+  By entering the contest, each participant/ contestant warrants that the
+  participant meets the entry requirements stated and accepts the following
+  terms and conditions:
+</h2>
+<ul>
+  <li>
+    The participant/ contestant thereof acknowledges that the solution submitted
+    will be an original work created solely by the participant/ contestant, and
+    that the solution does not infringe on copyrights, trademarks, moral rights,
+    rights of privacy/publicity or intellectual property rights of any person or
+    entity, and that no other party has any right, title, claim, or interest in
+    the solution.
+  </li>
+  <li>
+    The application must not contain content where any person/s would be
+    required to undertake actions that is inappropriate, indecent, obscene,
+    violent, hateful, tortuous, defamatory, slanderous; that promotes racism or
+    hatred against any group or individual or that promotes discrimination based
+    on race, sex, religion, nationality, disability, sexual orientation or age;
+    or that is unlawful, in violation of or contrary to the laws or regulations
+    in the state or province where the application is developed.
+  </li>
+  <li>
+    The participant/contestant thereof is the sole author of the solution and
+    that it is the team's original work.
+  </li>
+  <li>
+    The participant/contestant has not licensed or disposed of any rights in the
+    solution that would conflict with any of TCS's use (if any).
+  </li>
+  <li>
+    TCS does not claim ownership rights in your works or other materials posted
+    by the participant/ contestant
+  </li>
+  <li>
+    For the sole purpose of enabling TCS to make participant/ contestant's
+    solution available through TCS portal , the participant/ contestant grant's
+    TCS a non-exclusive, royalty-free license to reproduce, distribute,
+    re-format, store, prepare derivative works based on, and publicly display
+    participant/ contestant content. Participant/ contestant agrees not to
+    distribute any part of the portal other than participant/ contestant content
+    in any medium other than as permitted in these terms and conditions.
+  </li>
+  <li>
+    Display or publication of any entry on a TCS website does not indicate the
+    entrant will be selected as a winner. TCS will not be required to pay any
+    additional consideration or seek any additional approval in connection with
+    such use.
+  </li>
+  <li>
+    By entering this Contest, all entrants agree to release, discharge, and hold
+    harmless TCS from any claims, losses, and damages arising out of their
+    participation in this Contest or any Contest-related activities. TCS assumes
+    no responsibility for any error, omission, interruption, deletion, defect,
+    or delay in operation or transmission; communications line failure; theft or
+    destruction of or unauthorized access to Contest entries or entry forms; or
+    alteration of entries or entry forms. TCS is not responsible for any
+    problems with or technical malfunction of any telephone network or lines,
+    computer online systems, servers or providers, computer equipment, software,
+    failure of any email entry to be received on account of technical problems
+    or traffic congestion on the Internet or at any website, human errors of any
+    kind, or any combination thereof, including any injury or damage to
+    entrants' or any other persons' computers related to or resulting from
+    participation, uploading or downloading of any materials related to in this
+    Contest.
+  </li>
+  <li>
+    Except for any liability that cannot be excluded by applicable law, TCS
+    excludes all liability (including negligence), for any personal injury; or
+    any loss or damage; whether direct, indirect, special or consequential,
+    arising in any way in relation to the contest, including, but not limited
+    to, where arising out of the following: (a) any technical difficulties or
+    equipment malfunction (whether or not under TCS' control); (b) any theft,
+    unauthorized access or third party interference; (c) any tax liability
+    incurred by a contestant; or (d) use of the prize
+  </li>
+  <li>
+    TCS reserves the right, at its sole discretion, to cancel or terminate the
+    Contest, at any time it deems fit and proper. No claims or representations
+    shall be entertained in this regard.
+  </li>
+  <li>
+    TCS reserves the right to relax any of these restrictions if permitted by
+    law before the start of the qualification round.
+  </li>
+  <li>
+    All contestants must have access to the Internet, a valid postal address,
+    and a valid email address in order to enter the contest.
+  </li>
+  <li>
+    TCS reserves the right to verify eligibility and to adjudicate on any
+    dispute at any time. TCS will be the sole authority to decide the winners of
+    the contest and decision of TCS will be final and binding on all the
+    contestants.
+  </li>
+  <li>
+    TCS reserves the right to disqualify any contestant or entries or forfeit
+    any prize contestant is eligible to receive, where TCS reasonably (a)
+    suspects any unlawful or improper conduct, such as infringing a third
+    party's intellectual property rights, or (b) believes that contestant has
+    provided any false information for participation in the contest, attempted
+    or tampered or interfered with the administration of the contest or has
+    otherwise been a breach of these contest terms and conditions (c) submitting
+    content that violates any applicable law
+  </li>
+  <li>
+    By participating in the contest, participant/ contestant understand and
+    accepts that TCS may use the personal information provided by contestant
+    during registration and in any subsequent communications to administer the
+    contest. TCS may use, disclose or transfer the personal information of the
+    contestant for contest related purposes or activities, within a country or
+    overseas including inter-alia disclosing it to other organizations or third
+    parties that assist with the contest, displaying it on the website etc. TCS
+    will protect the personal information in accordance with applicable privacy
+    legislation and its privacy policy.
+  </li>
+  <li>
+    Except as required by law, TCS makes no warranties, express or implied in
+    connection with the contest
+  </li>
+  <li>
+    TCS shall not be liable in any way if the performance of obligations
+    hereunder is delayed or becomes impossible by reason of any Act of God, war,
+    fire, earthquake, strike, sickness, accident, civil commotion or any other
+    cause
+  </li>
+  <li>
+    The candidate must be at least eighteen (18) years old or the age of
+    majority in his/her country of residence (whichever is greater) at the time
+    of his/her initial registration for TCS CodeVita.
+  </li>
+  <li>
+    Contestant shall fully indemnify and hold TCS harmless for and against all
+    damages, losses, and costs that might be caused by: (1) Contestant's acts or
+    omissions in relation to the Contest (including use or acceptance of any
+    prize) (2) Contestant's failure to comply with the terms of the above
+    agreement
+  </li>
+  <li>
+    In case of discretionary decisions, those taken by the TCS will be final and
+    binding.
+  </li>
+  <li>
+    All communications between TCS and the contestant will only be in English.
+  </li>
+  <li>
+    By accepting a prize, the contestant agrees that TCS and its agents may use
+    the contestant's name/nickname/screen name, likeness and statements without
+    compensation to promote the Contest, including displaying it publicly on its
+    website. Contestant's name/nickname/screen name, will also be displayed
+    during the contest on its website.
+  </li>
+  <li>
+    The Contestant understands and agrees that nothing in these terms and
+    conditions, a submission into the Contest, or an award of a prize may be
+    construed as an offer or contract of employment with TCS.
+  </li>
+  <li>
+    The disputes or claims arising out of or relating to the contest will be
+    governed by and construed in accordance with the laws of Seoul, South Korea
+    and will be subject to jurisdiction of the courts of Seoul, South Korea.
+  </li>
+  <li>
+    The data submitted by a contestant at the time of registration can be
+    accessed by TCS for market research and analytics, contest promotions and
+    reach, without any disclosure of the contestant's personal data(PII), for
+    example - name, email id, etc. In cases of the contestant ranking among the
+    Top 3, he/she/they consent to TCS's use of PII including Name, Country,
+    Institute Name and photograph and inclusion in the Hall of Fame digital
+    album on the CodeVita site, located at codevita.tcsapps.com.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+</ul>
+        </div>
+        <div id="kc-terms-853_TandC" style="display:none;">
+<h2>
+  By entering the contest, each participant/ contestantwarrants that the
+  participantmeets the entry requirements stated and accepts the following terms
+  and conditions:
+</h2>
+<ul>
+  <li>
+    The participant/ contestant thereof acknowledges that the solution submitted
+    will be an original work created solely by the participant/ contestant, and
+    that the solution does not infringe on copyrights, trademarks, moral rights,
+    rights of privacy/publicity or intellectual property rights of any person or
+    entity, and that no other party has any right, title, claim, or interest in
+    the solution.
+  </li>
+  <li>
+    The application must not contain content where any person/s would be
+    required to undertake actions that is inappropriate, indecent, obscene,
+    violent, hateful, tortuous, defamatory, slanderous; that promotes racism or
+    hatred against any group or individual or that promotes discrimination based
+    on race, sex, religion, nationality, disability, sexual orientation or age;
+    or that is unlawful, in violation of or contrary to the laws or regulations
+    in the state or province where the application is developed.
+  </li>
+  <li>
+    The participant/contestant thereof is the sole author of the solution and
+    that it is the team's original work.
+  </li>
+  <li>
+    The participant/contestant has not licensed or disposed of any rights in the
+    solution that would conflict with any of TCS's use (if any).
+  </li>
+  <li>
+    TCS does not claim ownership rights in your works or other materials posted
+    by the participant/ contestant
+  </li>
+  <li>
+    For the sole purpose of enabling TCSto make participant/ contestant's
+    solution available through TCSportal , the participant/ contestant grant's
+    TCS a non-exclusive, royalty-free license to reproduce, distribute,
+    re-format, store, prepare derivative works based on, and publicly display
+    participant/ contestant content. Participant/ contestant agrees not to
+    distribute any part of the portal other than participant/ contestant content
+    in any medium other than as permitted in these terms and conditions.
+  </li>
+  <li>
+    Display or publication of any entry on a TCS website does not indicate the
+    entrant will be selected as a winner. TCS will not be required to pay any
+    additional consideration or seek any additional approval in connection with
+    such use.
+  </li>
+  <li>
+    By entering this Contest, all entrants agree to release, discharge, and hold
+    harmless TCS from any claims, losses, and damages arising out of their
+    participation in this Contest or any Contest-related activities. TCS assumes
+    no responsibility for any error, omission, interruption, deletion, defect,
+    or delay in operation or transmission; communications line failure; theft or
+    destruction of or unauthorized access to Contest entries or entry forms; or
+    alteration of entries or entry forms. TCS is not responsible for any
+    problems with or technical malfunction of any telephone network or lines,
+    computer online systems, servers or providers, computer equipment, software,
+    failure of any email entry to be received on account of technical problems
+    or traffic congestion on the Internet or at any website, human errors of any
+    kind, or any combination thereof, including any injury or damage to
+    entrants' or any other persons' computers related to or resulting from
+    participation, uploading or downloading of any materials related to in this
+    Contest.
+  </li>
+  <li>
+    Except for any liability that cannot be excluded by applicable law, TCS
+    excludes all liability (including negligence), for any personal injury; or
+    any loss or damage; whether direct, indirect, special or consequential,
+    arising in any way in relation to the contest, including, but not limited
+    to, where arising out of the following: (a) any technical difficulties or
+    equipment malfunction (whether or not under TCS' control); (b) any theft,
+    unauthorized access or third party interference; (c) any tax liability
+    incurred by a contestant; or (d) use of the prize
+  </li>
+  <li>
+    TCS reserves the right, at its sole discretion, to cancel or terminate the
+    Contest, at any time it deems fit and proper. No claims or representations
+    shall be entertained in this regard.
+  </li>
+  <li>
+    TCS reserves the right to relax any of these restrictions if permitted by
+    law before the start of the qualification round.
+  </li>
+  <li>
+    All contestants must have access to the Internet, a valid postal address,
+    and a valid email address in order to enter the contest.
+  </li>
+  <li>
+    TCS reserves the right to verify eligibility and to adjudicate on any
+    dispute at any time. TCS will be the sole authority to decide the winners of
+    the contest and decision of TCS will be final and binding on all the
+    contestants.
+  </li>
+  <li>
+    TCS reserves the right to disqualify any contestant or entries or forfeit
+    any prize contestant is eligible to receive, where TCS reasonably(a)
+    suspects any unlawful or improper conduct, such as infringing a third
+    party's intellectual property rights, or (b) believes that contestant has
+    provided any false information for participation in the contest, attempted
+    or tampered or interfered with the administration of the contest or has
+    otherwise been a breach of these contest terms and conditions (c) submitting
+    content that violates any applicable law
+  </li>
+  <li>
+    By participating in the contest, participant/ contestant understand and
+    accepts that TCS may use the personal information provided by contestant
+    during registration and in any subsequent communications to administer the
+    contest. TCS may use, disclose or transfer the personal information of the
+    contestant for contest related purposes or activities,within a country or
+    overseas including inter-alia disclosing it to other organizations or third
+    parties that assist with the contest, displaying it on the website etc. TCS
+    will protect the personal information in accordance with applicable privacy
+    legislation and its privacy policy.
+  </li>
+  <li>
+    Except as required by law, TCS makes no warranties, express or implied in
+    connection with the contest
+  </li>
+  <li>
+    TCS shall not be liable in any way if the performance of obligations
+    hereunder is delayed or becomes impossible by reason of any Act of God, war,
+    fire, earthquake, strike, sickness, accident, civil commotion or any other
+    cause
+  </li>
+  <li>
+    The candidate must be at least eighteen (18) years old or the age of
+    majority in his/her country of residence (whichever is greater) at the time
+    of his/her initial registration for TCS CodeVita.
+  </li>
+  <li>
+    Contestant shall fully indemnify and hold TCS harmless for and against all
+    damages, losses, and costs that might be caused by: (1) Contestant's acts or
+    omissions in relation to the Contest (including use or acceptance of any
+    prize) (2) Contestant's failure to comply with the terms of the above
+    agreement
+  </li>
+  <li>
+    In case of discretionary decisions, those taken by the TCS will be final and
+    binding.
+  </li>
+  <li>
+    All communications between TCS and the contestant will only be in English.
+  </li>
+  <li>
+    By accepting a prize, the contestant agrees that TCS and its agents may use
+    the contestant's name/nickname/screen name, likeness and statements without
+    compensation to promote the Contest, including displaying it publicly on its
+    website.Contestant's name/nickname/screen name, will also be displayed
+    during the contest on its website.
+  </li>
+  <li>
+    The Contestant understands and agrees that nothing in these terms and
+    conditions, a submission into the Contest, or an award of a prize may be
+    construed as an offer or contract of employment with TCS.
+  </li>
+  <li>
+    The disputes or claims arising out of or relating to the contest will be
+    governed by and construed in accordance with the laws of the Macau Special
+    Administrative Region and will be subject to jurisdiction of the courts of
+    Macau Special Administrative Region.
+  </li>
+  <li>
+    The data submitted by a contestant at the time of registration can be
+    accessed by TCS for market research and analytics, contest promotions and
+    reach, without any disclosure of the contestant's personal data(PII), for
+    example - name, email id, etc. In cases of the contestant ranking among the
+    Top 3, he/she/they consent to TCS's use of PII including Name, Country,
+    Institute Name and photograph and inclusion in the Hall of Fame digital
+    album on the CodeVita site, located at codevita.tcsapps.com.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+</ul>
+        </div>
+        <div id="kc-terms-60_TandC" style="display:none;">
+<h2>
+  By entering the contest, each participant/ contestant warrants that the
+  participant meets the entry requirements stated and accepts the following
+  terms and conditions:
+</h2>
+<ul>
+  <li>
+    The participant/ contestant thereof acknowledges that the solution submitted
+    will be an original work created solely by the participant/ contestant, and
+    that the solution does not infringe on copyrights, trademarks, moral rights,
+    rights of privacy/publicity or intellectual property rights of any person or
+    entity, and that no other party has any right, title, claim, or interest in
+    the solution.
+  </li>
+  <li>
+    The application must not contain content where any person/s would be
+    required to undertake actions that is inappropriate, indecent, obscene,
+    violent, hateful, tortuous, defamatory, slanderous; that promotes racism or
+    hatred against any group or individual or that promotes discrimination based
+    on race, sex, religion, nationality, disability, sexual orientation or age;
+    or that is unlawful, in violation of or contrary to the laws or regulations
+    in the state or province where the application is developed.
+  </li>
+  <li>
+    The participant/contestant thereof is the sole author of the solution and
+    that it is the team's original work.
+  </li>
+  <li>
+    The participant/contestant has not licensed or disposed of any rights in the
+    solution that would conflict with any of TCS's use (if any).
+  </li>
+  <li>
+    TCS does not claim ownership rights in your works or other materials posted
+    by the participant/ contestant
+  </li>
+  <li>
+    For the sole purpose of enabling TCS to make participant/ contestant's
+    solution available through TCS portal , the participant/ contestant grant's
+    TCS a non-exclusive, royalty-free license to reproduce, distribute,
+    re-format, store, prepare derivative works based on, and publicly display
+    participant/ contestant content. Participant/ contestant agrees not to
+    distribute any part of the portal other than participant/ contestant content
+    in any medium other than as permitted in these terms and conditions.
+  </li>
+  <li>
+    Display or publication of any entry on a TCS website does not indicate the
+    entrant will be selected as a winner. TCS will not be required to pay any
+    additional consideration or seek any additional approval in connection with
+    such use.
+  </li>
+  <li>
+    By entering this Contest, all entrants agree to release, discharge, and hold
+    harmless TCS from any claims, losses, and damages arising out of their
+    participation in this Contest or any Contest-related activities. TCS assumes
+    no responsibility for any error, omission, interruption, deletion, defect,
+    or delay in operation or transmission; communications line failure; theft or
+    destruction of or unauthorized access to Contest entries or entry forms; or
+    alteration of entries or entry forms. TCS is not responsible for any
+    problems with or technical malfunction of any telephone network or lines,
+    computer online systems, servers or providers, computer equipment, software,
+    failure of any email entry to be received on account of technical problems
+    or traffic congestion on the Internet or at any website, human errors of any
+    kind, or any combination thereof, including any injury or damage to
+    entrants' or any other persons' computers related to or resulting from
+    participation, uploading or downloading of any materials related to in this
+    Contest.
+  </li>
+  <li>
+    Except for any liability that cannot be excluded by applicable law, TCS
+    excludes all liability (including negligence), for any personal injury; or
+    any loss or damage; whether direct, indirect, special or consequential,
+    arising in any way in relation to the contest, including, but not limited
+    to, where arising out of the following: (a) any technical difficulties or
+    equipment malfunction (whether or not under TCS' control); (b) any theft,
+    unauthorized access or third party interference; (c) any tax liability
+    incurred by a contestant; or (d) use of the prize
+  </li>
+  <li>
+    TCS reserves the right, at its sole discretion, to cancel or terminate the
+    Contest, at any time it deems fit and proper. No claims or representations
+    shall be entertained in this regard.
+  </li>
+  <li>
+    TCS reserves the right to relax any of these restrictions if permitted by
+    law before the start of the qualification round.
+  </li>
+  <li>
+    All contestants must have access to the Internet, a valid postal address,
+    and a valid email address in order to enter the contest.
+  </li>
+  <li>
+    TCS reserves the right to verify eligibility and to adjudicate on any
+    dispute at any time. TCS will be the sole authority to decide the winners of
+    the contest and decision of TCS will be final and binding on all the
+    contestants.
+  </li>
+  <li>
+    TCS reserves the right to disqualify any contestant or entries or forfeit
+    any prize contestant is eligible to receive, where TCS reasonably (a)
+    suspects any unlawful or improper conduct, such as infringing a third
+    party's intellectual property rights, or (b) believes that contestant has
+    provided any false information for participation in the contest, attempted
+    or tampered or interfered with the administration of the contest or has
+    otherwise been a breach of these contest terms and conditions (c) submitting
+    content that violates any applicable law
+  </li>
+  <li>
+    By participating in the contest, participant/ contestant understand and
+    accepts that TCS may use the personal information provided by contestant
+    during registration and in any subsequent communications to administer the
+    contest. TCS may use, disclose or transfer the personal information of the
+    contestant for contest related purposes or activities, within a country or
+    overseas including inter-alia disclosing it to other organizations or third
+    parties that assist with the contest, displaying it on the website etc. TCS
+    will protect the personal information in accordance with applicable privacy
+    legislation and its privacy policy.
+  </li>
+  <li>
+    Except as required by law, TCS makes no warranties, express or implied in
+    connection with the contest
+  </li>
+  <li>
+    TCS shall not be liable in any way if the performance of obligations
+    hereunder is delayed or becomes impossible by reason of any Act of God, war,
+    fire, earthquake, strike, sickness, accident, civil commotion or any other
+    cause
+  </li>
+  <li>
+    The candidate must be at least eighteen (18) years old or the age of
+    majority in his/her country of residence (whichever is greater) at the time
+    of his/her initial registration for TCS CodeVita.
+  </li>
+  <li>
+    Contestant shall fully indemnify and hold TCS harmless for and against all
+    damages, losses, and costs that might be caused by: (1) Contestant's acts or
+    omissions in relation to the Contest (including use or acceptance of any
+    prize) (2) Contestant's failure to comply with the terms of the above
+    agreement
+  </li>
+  <li>
+    In case of discretionary decisions, those taken by the TCS will be final and
+    binding.
+  </li>
+  <li>
+    All communications between TCS and the contestant will only be in English.
+  </li>
+  <li>
+    By accepting a prize, the contestant agrees that TCS and its agents may use
+    the contestant's name/nickname/screen name, likeness and statements without
+    compensation to promote the Contest, including displaying it publicly on its
+    website. Contestant's name/nickname/screen name, will also be displayed
+    during the contest on its website.
+  </li>
+  <li>
+    The Contestant understands and agrees that nothing in these terms and
+    conditions, a submission into the Contest, or an award of a prize may be
+    construed as an offer or contract of employment with TCS.
+  </li>
+  <li>
+    The disputes or claims arising out of or relating to the contest will be
+    governed by and construed in accordance with the laws of Kuala Lumpur,
+    Malaysia and will be subject to jurisdiction of the courts in Kuala Lumpur,
+    Malaysia.
+  </li>
+  <li>
+    The data submitted by a contestant at the time of registration can be
+    accessed by TCS for market research and analytics, contest promotions and
+    reach, without any disclosure of the contestant's personal data(PII), for
+    example - name, email id, etc. In cases of the contestant ranking among the
+    Top 3, he/she/they consent to TCS's use of PII including Name, Country,
+    Institute Name and photograph and inclusion in the Hall of Fame digital
+    album on the CodeVita site, located at codevita.tcsapps.com.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+</ul>
+        </div>
+        <div id="kc-terms-64_TandC" style="display:none;">
+<h2>
+  By entering the contest, each participant/ contestant warrants that the
+  participant meets the entry requirements stated and accepts the following
+  terms and conditions:
+</h2>
+<ul>
+  <li>
+    The participant/ contestant thereof acknowledges that the solution submitted
+    will be an original work created solely by the participant/ contestant, and
+    that the solution does not infringe on copyrights, trademarks, moral rights,
+    rights of privacy/publicity or intellectual property rights of any person or
+    entity, and that no other party has any right, title, claim, or interest in
+    the solution.
+  </li>
+  <li>
+    The application must not contain content where any person/s would be
+    required to undertake actions that is inappropriate, indecent, obscene,
+    violent, hateful, tortuous, defamatory, slanderous; that promotes racism or
+    hatred against any group or individual or that promotes discrimination based
+    on race, sex, religion, nationality, disability, sexual orientation or age;
+    or that is unlawful, in violation of or contrary to the laws or regulations
+    in the state or province where the application is developed.
+  </li>
+  <li>
+    The participant/contestant thereof is the sole author of the solution and
+    that it is the team's original work.
+  </li>
+  <li>
+    The participant/contestant has not licensed or disposed of any rights in the
+    solution that would conflict with any of TCS's use (if any).
+  </li>
+  <li>
+    TCS does not claim ownership rights in your works or other materials posted
+    by the participant/ contestant
+  </li>
+  <li>
+    For the sole purpose of enabling TCS to make participant/ contestant's
+    solution available through TCS portal , the participant/ contestant grant's
+    TCS a non-exclusive, royalty-free license to reproduce, distribute,
+    re-format, store, prepare derivative works based on, and publicly display
+    participant/ contestant content. Participant/ contestant agrees not to
+    distribute any part of the portal other than participant/ contestant content
+    in any medium other than as permitted in these terms and conditions.
+  </li>
+  <li>
+    Display or publication of any entry on a TCS website does not indicate the
+    entrant will be selected as a winner. TCS will not be required to pay any
+    additional consideration or seek any additional approval in connection with
+    such use.
+  </li>
+  <li>
+    By entering this Contest, all entrants agree to release, discharge, and hold
+    harmless TCS from any claims, losses, and damages arising out of their
+    participation in this Contest or any Contest-related activities. TCS assumes
+    no responsibility for any error, omission, interruption, deletion, defect,
+    or delay in operation or transmission; communications line failure; theft or
+    destruction of or unauthorized access to Contest entries or entry forms; or
+    alteration of entries or entry forms. TCS is not responsible for any
+    problems with or technical malfunction of any telephone network or lines,
+    computer online systems, servers or providers, computer equipment, software,
+    failure of any email entry to be received on account of technical problems
+    or traffic congestion on the Internet or at any website, human errors of any
+    kind, or any combination thereof, including any injury or damage to
+    entrants' or any other persons' computers related to or resulting from
+    participation, uploading or downloading of any materials related to in this
+    Contest.
+  </li>
+  <li>
+    Except for any liability that cannot be excluded by applicable law, TCS
+    excludes all liability (including negligence), for any personal injury; or
+    any loss or damage; whether direct, indirect, special or consequential,
+    arising in any way in relation to the contest, including, but not limited
+    to, where arising out of the following: (a) any technical difficulties or
+    equipment malfunction (whether or not under TCS' control); (b) any theft,
+    unauthorized access or third party interference; (c) any tax liability
+    incurred by a contestant; or (d) use of the prize
+  </li>
+  <li>
+    TCS reserves the right, at its sole discretion, to cancel or terminate the
+    Contest, at any time it deems fit and proper. No claims or representations
+    shall be entertained in this regard.
+  </li>
+  <li>
+    TCS reserves the right to relax any of these restrictions if permitted by
+    law before the start of the qualification round.
+  </li>
+  <li>
+    All contestants must have access to the Internet, a valid postal address,
+    and a valid email address in order to enter the contest.
+  </li>
+  <li>
+    TCS reserves the right to verify eligibility and to adjudicate on any
+    dispute at any time. TCS will be the sole authority to decide the winners of
+    the contest and decision of TCS will be final and binding on all the
+    contestants.
+  </li>
+  <li>
+    TCS reserves the right to disqualify any contestant or entries or forfeit
+    any prize contestant is eligible to receive, where TCS reasonably (a)
+    suspects any unlawful or improper conduct, such as infringing a third
+    party's intellectual property rights, or (b) believes that contestant has
+    provided any false information for participation in the contest, attempted
+    or tampered or interfered with the administration of the contest or has
+    otherwise been a breach of these contest terms and conditions (c) submitting
+    content that violates any applicable law
+  </li>
+  <li>
+    By participating in the contest, participant/ contestant understand and
+    accepts that TCS may use the personal information provided by contestant
+    during registration and in any subsequent communications to administer the
+    contest. TCS may use, disclose or transfer the personal information of the
+    contestant for contest related purposes or activities, within a country or
+    overseas including inter-alia disclosing it to other organizations or third
+    parties that assist with the contest, displaying it on the website etc. TCS
+    will protect the personal information in accordance with applicable privacy
+    legislation and its privacy policy.
+  </li>
+  <li>
+    Except as required by law, TCS makes no warranties, express or implied in
+    connection with the contest
+  </li>
+  <li>
+    TCS shall not be liable in any way if the performance of obligations
+    hereunder is delayed or becomes impossible by reason of any Act of God, war,
+    fire, earthquake, strike, sickness, accident, civil commotion or any other
+    cause
+  </li>
+  <li>
+    The candidate must be at least eighteen (18) years old or the age of
+    majority in his/her country of residence (whichever is greater) at the time
+    of his/her initial registration for TCS CodeVita.
+  </li>
+  <li>
+    Contestant shall fully indemnify and hold TCS harmless for and against all
+    damages, losses, and costs that might be caused by: (1) Contestant's acts or
+    omissions in relation to the Contest (including use or acceptance of any
+    prize) (2) Contestant's failure to comply with the terms of the above
+    agreement
+  </li>
+  <li>
+    In case of discretionary decisions, those taken by the TCS will be final and
+    binding.
+  </li>
+  <li>
+    All communications between TCS and the contestant will only be in English.
+  </li>
+  <li>
+    By accepting a prize, the contestant agrees that TCS and its agents may use
+    the contestant's name/nickname/screen name, likeness and statements without
+    compensation to promote the Contest, including displaying it publicly on its
+    website. Contestant's name/nickname/screen name, will also be displayed
+    during the contest on its website.
+  </li>
+  <li>
+    The Contestant understands and agrees that nothing in these terms and
+    conditions, a submission into the Contest, or an award of a prize may be
+    construed as an offer or contract of employment with TCS.
+  </li>
+  <li>
+    All disputes or claims arising out of or relating to the contest will be
+    governed by the laws of the State of New South Wales, Australia and will be
+    subject to jurisdiction of the courts in the State of New South Wales,
+    Australia.
+  </li>
+  <li>
+    The data submitted by a contestant at the time of registration can be
+    accessed by TCS for market research and analytics, contest promotions and
+    reach, without any disclosure of the contestant's personal data(PII), for
+    example - name, email id, etc. In cases of the contestant ranking among the
+    Top 3, he/she/they consent to TCS's use of PII including Name, Country,
+    Institute Name and photograph and inclusion in the Hall of Fame digital
+    album on the CodeVita site, located at codevita.tcsapps.com.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+</ul>
+        </div>
+        <div id="kc-terms-63_TandC" style="display:none;">
+<h2>
+  By entering the contest, each participant/ contestant warrants that the
+  participant meets the entry requirements stated and accepts the following
+  terms and conditions:
+</h2>
+<ul>
+  <li>
+    The participant/ contestant thereof acknowledges that the solution submitted
+    will be an original work created solely by the participant/ contestant, and
+    that the solution does not infringe on copyrights, trademarks, moral rights,
+    rights of privacy/publicity or intellectual property rights of any person or
+    entity, and that no other party has any right, title, claim, or interest in
+    the solution.
+  </li>
+  <li>
+    The application must not contain content where any person/s would be
+    required to undertake actions that is inappropriate, indecent, obscene,
+    violent, hateful, tortuous, defamatory, slanderous; that promotes racism or
+    hatred against any group or individual or that promotes discrimination based
+    on race, sex, religion, nationality, disability, sexual orientation or age;
+    or that is unlawful, in violation of or contrary to the laws or regulations
+    in the state or province where the application is developed.
+  </li>
+  <li>
+    The participant/contestant thereof is the sole author of the solution and
+    that it is the team's original work.
+  </li>
+  <li>
+    The participant/contestant has not licensed or disposed of any rights in the
+    solution that would conflict with any of TCS's use (if any).
+  </li>
+  <li>
+    TCS does not claim ownership rights in your works or other materials posted
+    by the participant/ contestant
+  </li>
+  <li>
+    For the sole purpose of enabling TCS to make participant/ contestant's
+    solution available through TCS portal , the participant/ contestant grant's
+    TCS a non-exclusive, royalty-free license to reproduce, distribute,
+    re-format, store, prepare derivative works based on, and publicly display
+    participant/ contestant content. Participant/ contestant agrees not to
+    distribute any part of the portal other than participant/ contestant content
+    in any medium other than as permitted in these terms and conditions.
+  </li>
+  <li>
+    Display or publication of any entry on a TCS website does not indicate the
+    entrant will be selected as a winner. TCS will not be required to pay any
+    additional consideration or seek any additional approval in connection with
+    such use.
+  </li>
+  <li>
+    By entering this Contest, all entrants agree to release, discharge, and hold
+    harmless TCS from any claims, losses, and damages arising out of their
+    participation in this Contest or any Contest-related activities. TCS assumes
+    no responsibility for any error, omission, interruption, deletion, defect,
+    or delay in operation or transmission; communications line failure; theft or
+    destruction of or unauthorized access to Contest entries or entry forms; or
+    alteration of entries or entry forms. TCS is not responsible for any
+    problems with or technical malfunction of any telephone network or lines,
+    computer online systems, servers or providers, computer equipment, software,
+    failure of any email entry to be received on account of technical problems
+    or traffic congestion on the Internet or at any website, human errors of any
+    kind, or any combination thereof, including any injury or damage to
+    entrants' or any other persons' computers related to or resulting from
+    participation, uploading or downloading of any materials related to in this
+    Contest.
+  </li>
+  <li>
+    Except for any liability that cannot be excluded by applicable law, TCS
+    excludes all liability (including negligence), for any personal injury; or
+    any loss or damage; whether direct, indirect, special or consequential,
+    arising in any way in relation to the contest, including, but not limited
+    to, where arising out of the following: (a) any technical difficulties or
+    equipment malfunction (whether or not under TCS' control); (b) any theft,
+    unauthorized access or third party interference; (c) any tax liability
+    incurred by a contestant; or (d) use of the prize
+  </li>
+  <li>
+    TCS reserves the right, at its sole discretion, to cancel or terminate the
+    Contest, at any time it deems fit and proper. No claims or representations
+    shall be entertained in this regard.
+  </li>
+  <li>
+    TCS reserves the right to relax any of these restrictions if permitted by
+    law before the start of the qualification round.
+  </li>
+  <li>
+    All contestants must have access to the Internet, a valid postal address,
+    and a valid email address in order to enter the contest.
+  </li>
+  <li>
+    TCS reserves the right to verify eligibility and to adjudicate on any
+    dispute at any time. TCS will be the sole authority to decide the winners of
+    the contest and decision of TCS will be final and binding on all the
+    contestants.
+  </li>
+  <li>
+    TCS reserves the right to disqualify any contestant or entries or forfeit
+    any prize contestant is eligible to receive, where TCS reasonably (a)
+    suspects any unlawful or improper conduct, such as infringing a third
+    party's intellectual property rights, or (b) believes that contestant has
+    provided any false information for participation in the contest, attempted
+    or tampered or interfered with the administration of the contest or has
+    otherwise been a breach of these contest terms and conditions (c) submitting
+    content that violates any applicable law
+  </li>
+  <li>
+    By participating in the contest, participant/ contestant understand and
+    accepts that TCS may use the personal information provided by contestant
+    during registration and in any subsequent communications to administer the
+    contest. TCS may use, disclose or transfer the personal information of the
+    contestant for contest related purposes or activities, within a country or
+    overseas including inter-alia disclosing it to other organizations or third
+    parties that assist with the contest, displaying it on the website etc. TCS
+    will protect the personal information in accordance with applicable privacy
+    legislation and its privacy policy.
+  </li>
+  <li>
+    Except as required by law, TCS makes no warranties, express or implied in
+    connection with the contest
+  </li>
+  <li>
+    TCS shall not be liable in any way if the performance of obligations
+    hereunder is delayed or becomes impossible by reason of any Act of God, war,
+    fire, earthquake, strike, sickness, accident, civil commotion or any other
+    cause
+  </li>
+  <li>
+    The candidate must be at least eighteen (18) years old or the age of
+    majority in his/her country of residence (whichever is greater) at the time
+    of his/her initial registration for TCS CodeVita.
+  </li>
+  <li>
+    Contestant shall fully indemnify and hold TCS harmless for and against all
+    damages, losses, and costs that might be caused by: (1) Contestant's acts or
+    omissions in relation to the Contest (including use or acceptance of any
+    prize) (2) Contestant's failure to comply with the terms of the above
+    agreement
+  </li>
+  <li>
+    In case of discretionary decisions, those taken by the TCS will be final and
+    binding.
+  </li>
+  <li>
+    All communications between TCS and the contestant will only be in English.
+  </li>
+  <li>
+    By accepting a prize, the contestant agrees that TCS and its agents may use
+    the contestant's name/nickname/screen name, likeness and statements without
+    compensation to promote the Contest, including displaying it publicly on its
+    website. Contestant's name/nickname/screen name, will also be displayed
+    during the contest on its website.
+  </li>
+  <li>
+    The Contestant understands and agrees that nothing in these terms and
+    conditions, a submission into the Contest, or an award of a prize may be
+    construed as an offer or contract of employment with TCS.
+  </li>
+  <li>
+    The disputes or claims arising out of or relating to the contest will be
+    governed by and construed in accordance with the laws of Manila, Philippines
+    and will be subject to jurisdiction of the courts in Manila, Philippines.
+  </li>
+  <li>
+    The data submitted by a contestant at the time of registration can be
+    accessed by TCS for market research and analytics, contest promotions and
+    reach, without any disclosure of the contestant's personal data(PII), for
+    example - name, email id, etc. In cases of the contestant ranking among the
+    Top 3, he/she/they consent to TCS's use of PII including Name, Country,
+    Institute Name and photograph and inclusion in the Hall of Fame digital
+    album on the CodeVita site, located at codevita.tcsapps.com.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+</ul>
+        </div>
+        <div id="kc-terms-65_TandC" style="display:none;">
+<h2>
+  By entering the contest, each participant/ contestant warrants that the
+  participant meets the entry requirements stated and accepts the following
+  terms and conditions:
+</h2>
+<ul>
+  <li>
+    The participant/ contestant thereof acknowledges that the solution submitted
+    will be an original work created solely by the participant/ contestant, and
+    that the solution does not infringe on copyrights, trademarks, moral rights,
+    rights of privacy/publicity or intellectual property rights of any person or
+    entity, and that no other party has any right, title, claim, or interest in
+    the solution.
+  </li>
+  <li>
+    The application must not contain content where any person/s would be
+    required to undertake actions that is inappropriate, indecent, obscene,
+    violent, hateful, tortuous, defamatory, slanderous; that promotes racism or
+    hatred against any group or individual or that promotes discrimination based
+    on race, sex, religion, nationality, disability, sexual orientation or age;
+    or that is unlawful, in violation of or contrary to the laws or regulations
+    in the state or province where the application is developed.
+  </li>
+  <li>
+    The participant/contestant thereof is the sole author of the solution and
+    that it is the team's original work.
+  </li>
+  <li>
+    The participant/contestant has not licensed or disposed of any rights in the
+    solution that would conflict with any of TCS's use (if any).
+  </li>
+  <li>
+    TCS does not claim ownership rights in your works or other materials posted
+    by the participant/ contestant
+  </li>
+  <li>
+    For the sole purpose of enabling TCS to make participant/ contestant's
+    solution available through TCS portal , the participant/ contestant grant's
+    TCS a non-exclusive, royalty-free license to reproduce, distribute,
+    re-format, store, prepare derivative works based on, and publicly display
+    participant/ contestant content. Participant/ contestant agrees not to
+    distribute any part of the portal other than participant/ contestant content
+    in any medium other than as permitted in these terms and conditions.
+  </li>
+  <li>
+    Display or publication of any entry on a TCS website does not indicate the
+    entrant will be selected as a winner. TCS will not be required to pay any
+    additional consideration or seek any additional approval in connection with
+    such use.
+  </li>
+  <li>
+    By entering this Contest, all entrants agree to release, discharge, and hold
+    harmless TCS from any claims, losses, and damages arising out of their
+    participation in this Contest or any Contest-related activities. TCS assumes
+    no responsibility for any error, omission, interruption, deletion, defect,
+    or delay in operation or transmission; communications line failure; theft or
+    destruction of or unauthorized access to Contest entries or entry forms; or
+    alteration of entries or entry forms. TCS is not responsible for any
+    problems with or technical malfunction of any telephone network or lines,
+    computer online systems, servers or providers, computer equipment, software,
+    failure of any email entry to be received on account of technical problems
+    or traffic congestion on the Internet or at any website, human errors of any
+    kind, or any combination thereof, including any injury or damage to
+    entrants' or any other persons' computers related to or resulting from
+    participation, uploading or downloading of any materials related to in this
+    Contest.
+  </li>
+  <li>
+    Except for any liability that cannot be excluded by applicable law, TCS
+    excludes all liability (including negligence), for any personal injury; or
+    any loss or damage; whether direct, indirect, special or consequential,
+    arising in any way in relation to the contest, including, but not limited
+    to, where arising out of the following: (a) any technical difficulties or
+    equipment malfunction (whether or not under TCS' control); (b) any theft,
+    unauthorized access or third party interference; (c) any tax liability
+    incurred by a contestant; or (d) use of the prize
+  </li>
+  <li>
+    TCS reserves the right, at its sole discretion, to cancel or terminate the
+    Contest, at any time it deems fit and proper. No claims or representations
+    shall be entertained in this regard.
+  </li>
+  <li>
+    TCS reserves the right to relax any of these restrictions if permitted by
+    law before the start of the qualification round.
+  </li>
+  <li>
+    All contestants must have access to the Internet, a valid postal address,
+    and a valid email address in order to enter the contest.
+  </li>
+  <li>
+    TCS reserves the right to verify eligibility and to adjudicate on any
+    dispute at any time. TCS will be the sole authority to decide the winners of
+    the contest and decision of TCS will be final and binding on all the
+    contestants.
+  </li>
+  <li>
+    TCS reserves the right to disqualify any contestant or entries or forfeit
+    any prize contestant is eligible to receive, where TCS reasonably (a)
+    suspects any unlawful or improper conduct, such as infringing a third
+    party's intellectual property rights, or (b) believes that contestant has
+    provided any false information for participation in the contest, attempted
+    or tampered or interfered with the administration of the contest or has
+    otherwise been a breach of these contest terms and conditions (c) submitting
+    content that violates any applicable law
+  </li>
+  <li>
+    By participating in the contest, participant/ contestant understand and
+    accepts that TCS may use the personal information provided by contestant
+    during registration and in any subsequent communications to administer the
+    contest. TCS may use, disclose or transfer the personal information of the
+    contestant for contest related purposes or activities, within a country or
+    overseas including inter-alia disclosing it to other organizations or third
+    parties that assist with the contest, displaying it on the website etc. TCS
+    will protect the personal information in accordance with applicable privacy
+    legislation and its privacy policy.
+  </li>
+  <li>
+    Except as required by law, TCS makes no warranties, express or implied in
+    connection with the contest
+  </li>
+  <li>
+    TCS shall not be liable in any way if the performance of obligations
+    hereunder is delayed or becomes impossible by reason of any Act of God, war,
+    fire, earthquake, strike, sickness, accident, civil commotion or any other
+    cause
+  </li>
+  <li>
+    The candidate must be at least eighteen (18) years old or the age of
+    majority in his/her country of residence (whichever is greater) at the time
+    of his/her initial registration for TCS CodeVita.
+  </li>
+  <li>
+    Contestant shall fully indemnify and hold TCS harmless for and against all
+    damages, losses, and costs that might be caused by: (1) Contestant's acts or
+    omissions in relation to the Contest (including use or acceptance of any
+    prize) (2) Contestant's failure to comply with the terms of the above
+    agreement
+  </li>
+  <li>
+    In case of discretionary decisions, those taken by the TCS will be final and
+    binding.
+  </li>
+  <li>
+    All communications between TCS and the contestant will only be in English.
+  </li>
+  <li>
+    By accepting a prize, the contestant agrees that TCS and its agents may use
+    the contestant's name/nickname/screen name, likeness and statements without
+    compensation to promote the Contest, including displaying it publicly on its
+    website. Contestant's name/nickname/screen name, will also be displayed
+    during the contest on its website.
+  </li>
+  <li>
+    The Contestant understands and agrees that nothing in these terms and
+    conditions, a submission into the Contest, or an award of a prize may be
+    construed as an offer or contract of employment with TCS.
+  </li>
+  <li>
+    The disputes or claims arising out of or relating to the contest will be
+    governed by and construed in accordance with the laws of Singapore and will
+    be subject to jurisdiction of the courts of Singapore.
+  </li>
+  <li>
+    The data submitted by a contestant at the time of registration can be
+    accessed by TCS for market research and analytics, contest promotions and
+    reach, without any disclosure of the contestant's personal data(PII), for
+    example - name, email id, etc. In cases of the contestant ranking among the
+    Top 3, he/she/they consent to TCS's use of PII including Name, Country,
+    Institute Name and photograph and inclusion in the Hall of Fame digital
+    album on the CodeVita site, located at codevita.tcsapps.com.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+</ul>
+        </div>
+        <div id="kc-terms-886_TandC" style="display:none;">
+<h2>
+  By entering the contest, each participant/ contestant warrants that the
+  participant meets the entry requirements stated and accepts the following
+  terms and conditions:
+</h2>
+<ul>
+  <li>
+    The participant/ contestant thereof acknowledges that the solution submitted
+    will be an original work created solely by the participant/ contestant, and
+    that the solution does not infringe on copyrights, trademarks, moral rights,
+    rights of privacy/publicity or intellectual property rights of any person or
+    entity, and that no other party has any right, title, claim, or interest in
+    the solution.
+  </li>
+  <li>
+    The application must not contain content where any person/s would be
+    required to undertake actions that is inappropriate, indecent, obscene,
+    violent, hateful, tortuous, defamatory, slanderous; that promotes racism or
+    hatred against any group or individual or that promotes discrimination based
+    on race, sex, religion, nationality, disability, sexual orientation or age;
+    or that is unlawful, in violation of or contrary to the laws or regulations
+    in the state or province where the application is developed.
+  </li>
+  <li>
+    The participant/contestant thereof is the sole author of the solution and
+    that it is the team's original work.
+  </li>
+  <li>
+    The participant/contestant has not licensed or disposed of any rights in the
+    solution that would conflict with any of TCS's use (if any).
+  </li>
+  <li>
+    TCS does not claim ownership rights in your works or other materials posted
+    by the participant/ contestant
+  </li>
+  <li>
+    For the sole purpose of enabling TCS to make participant/ contestant's
+    solution available through TCS portal , the participant/ contestant grant's
+    TCS a non-exclusive, royalty-free license to reproduce, distribute,
+    re-format, store, prepare derivative works based on, and publicly display
+    participant/ contestant content. Participant/ contestant agrees not to
+    distribute any part of the portal other than participant/ contestant content
+    in any medium other than as permitted in these terms and conditions.
+  </li>
+  <li>
+    Display or publication of any entry on a TCS website does not indicate the
+    entrant will be selected as a winner. TCS will not be required to pay any
+    additional consideration or seek any additional approval in connection with
+    such use.
+  </li>
+  <li>
+    By entering this Contest, all entrants agree to release, discharge, and hold
+    harmless TCS from any claims, losses, and damages arising out of their
+    participation in this Contest or any Contest-related activities. TCS assumes
+    no responsibility for any error, omission, interruption, deletion, defect,
+    or delay in operation or transmission; communications line failure; theft or
+    destruction of or unauthorized access to Contest entries or entry forms; or
+    alteration of entries or entry forms. TCS is not responsible for any
+    problems with or technical malfunction of any telephone network or lines,
+    computer online systems, servers or providers, computer equipment, software,
+    failure of any email entry to be received on account of technical problems
+    or traffic congestion on the Internet or at any website, human errors of any
+    kind, or any combination thereof, including any injury or damage to
+    entrants' or any other persons' computers related to or resulting from
+    participation, uploading or downloading of any materials related to in this
+    Contest.
+  </li>
+  <li>
+    Except for any liability that cannot be excluded by applicable law, TCS
+    excludes all liability (including negligence), for any personal injury; or
+    any loss or damage; whether direct, indirect, special or consequential,
+    arising in any way in relation to the contest, including, but not limited
+    to, where arising out of the following: (a) any technical difficulties or
+    equipment malfunction (whether or not under TCS' control); (b) any theft,
+    unauthorized access or third party interference; (c) any tax liability
+    incurred by a contestant; or (d) use of the prize
+  </li>
+  <li>
+    TCS reserves the right, at its sole discretion, to cancel or terminate the
+    Contest, at any time it deems fit and proper. No claims or representations
+    shall be entertained in this regard.
+  </li>
+  <li>
+    TCS reserves the right to relax any of these restrictions if permitted by
+    law before the start of the qualification round.
+  </li>
+  <li>
+    All contestants must have access to the Internet, a valid postal address,
+    and a valid email address in order to enter the contest.
+  </li>
+  <li>
+    TCS reserves the right to verify eligibility and to adjudicate on any
+    dispute at any time. TCS will be the sole authority to decide the winners of
+    the contest and decision of TCS will be final and binding on all the
+    contestants.
+  </li>
+  <li>
+    TCS reserves the right to disqualify any contestant or entries or forfeit
+    any prize contestant is eligible to receive, where TCS reasonably (a)
+    suspects any unlawful or improper conduct, such as infringing a third
+    party's intellectual property rights, or (b) believes that contestant has
+    provided any false information for participation in the contest, attempted
+    or tampered or interfered with the administration of the contest or has
+    otherwise been a breach of these contest terms and conditions (c) submitting
+    content that violates any applicable law
+  </li>
+  <li>
+    By participating in the contest, participant/ contestant understand and
+    accepts that TCS may use the personal information provided by contestant
+    during registration and in any subsequent communications to administer the
+    contest. TCS may use, disclose or transfer the personal information of the
+    contestant for contest related purposes or activities, within a country or
+    overseas including inter-alia disclosing it to other organizations or third
+    parties that assist with the contest, displaying it on the website etc. TCS
+    will protect the personal information in accordance with applicable privacy
+    legislation and its privacy policy.
+  </li>
+  <li>
+    Except as required by law, TCS makes no warranties, express or implied in
+    connection with the contest
+  </li>
+  <li>
+    TCS shall not be liable in any way if the performance of obligations
+    hereunder is delayed or becomes impossible by reason of any Act of God, war,
+    fire, earthquake, strike, sickness, accident, civil commotion or any other
+    cause
+  </li>
+  <li>
+    The candidate must be at least eighteen (18) years old or the age of
+    majority in his/her country of residence (whichever is greater) at the time
+    of his/her initial registration for TCS CodeVita.
+  </li>
+  <li>
+    Contestant shall fully indemnify and hold TCS harmless for and against all
+    damages, losses, and costs that might be caused by: (1) Contestant's acts or
+    omissions in relation to the Contest (including use or acceptance of any
+    prize) (2) Contestant's failure to comply with the terms of the above
+    agreement
+  </li>
+  <li>
+    In case of discretionary decisions, those taken by the TCS will be final and
+    binding.
+  </li>
+  <li>
+    All communications between TCS and the contestant will only be in English.
+  </li>
+  <li>
+    By accepting a prize, the contestant agrees that TCS and its agents may use
+    the contestant's name/nickname/screen name, likeness and statements without
+    compensation to promote the Contest, including displaying it publicly on its
+    website. Contestant's name/nickname/screen name, will also be displayed
+    during the contest on its website.
+  </li>
+  <li>
+    The Contestant understands and agrees that nothing in these terms and
+    conditions, a submission into the Contest, or an award of a prize may be
+    construed as an offer or contract of employment with TCS.
+  </li>
+  <li>
+    The disputes or claims arising out of or relating to the contest will be
+    governed by and construed in accordance with the laws of Taiwan (ROC) and
+    will be subject to jurisdiction of Taipei District Court of Taiwan.
+  </li>
+  <li>
+    The data submitted by a contestant at the time of registration can be
+    accessed by TCS for market research and analytics, contest promotions and
+    reach, without any disclosure of the contestant's personal data(PII), for
+    example - name, email id, etc. In cases of the contestant ranking among the
+    Top 3, he/she/they consent to TCS's use of PII including Name, Country,
+    Institute Name and photograph and inclusion in the Hall of Fame digital
+    album on the CodeVita site, located at codevita.tcsapps.com.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+</ul>
+        </div>
+        <div id="kc-terms-66_TandC" style="display:none;">
+<h2>
+  By entering the contest, each participant/ contestant warrants that the
+  participant meets the entry requirements stated and accepts the following
+  terms and conditions:
+</h2>
+<ul>
+  <li>
+    The participant/ contestant thereof acknowledges that the solution submitted
+    will be an original work created solely by the participant/ contestant, and
+    that the solution does not infringe on copyrights, trademarks, moral rights,
+    rights of privacy/publicity or intellectual property rights of any person or
+    entity, and that no other party has any right, title, claim, or interest in
+    the solution.
+  </li>
+  <li>
+    The application must not contain content where any person/s would be
+    required to undertake actions that is inappropriate, indecent, obscene,
+    violent, hateful, tortuous, defamatory, slanderous; that promotes racism or
+    hatred against any group or individual or that promotes discrimination based
+    on race, sex, religion, nationality, disability, sexual orientation or age;
+    or that is unlawful, in violation of or contrary to the laws or regulations
+    in the state or province where the application is developed.
+  </li>
+  <li>
+    The participant/contestant thereof is the sole author of the solution and
+    that it is the team's original work.
+  </li>
+  <li>
+    The participant/contestant has not licensed or disposed of any rights in the
+    solution that would conflict with any of TCS's use (if any).
+  </li>
+  <li>
+    TCS does not claim ownership rights in your works or other materials posted
+    by the participant/ contestant
+  </li>
+  <li>
+    For the sole purpose of enabling TCS to make participant/ contestant's
+    solution available through TCS portal , the participant/ contestant grant's
+    TCS a non-exclusive, royalty-free license to reproduce, distribute,
+    re-format, store, prepare derivative works based on, and publicly display
+    participant/ contestant content. Participant/ contestant agrees not to
+    distribute any part of the portal other than participant/ contestant content
+    in any medium other than as permitted in these terms and conditions.
+  </li>
+  <li>
+    Display or publication of any entry on a TCS website does not indicate the
+    entrant will be selected as a winner. TCS will not be required to pay any
+    additional consideration or seek any additional approval in connection with
+    such use.
+  </li>
+  <li>
+    By entering this Contest, all entrants agree to release, discharge, and hold
+    harmless TCS from any claims, losses, and damages arising out of their
+    participation in this Contest or any Contest-related activities. TCS assumes
+    no responsibility for any error, omission, interruption, deletion, defect,
+    or delay in operation or transmission; communications line failure; theft or
+    destruction of or unauthorized access to Contest entries or entry forms; or
+    alteration of entries or entry forms. TCS is not responsible for any
+    problems with or technical malfunction of any telephone network or lines,
+    computer online systems, servers or providers, computer equipment, software,
+    failure of any email entry to be received on account of technical problems
+    or traffic congestion on the Internet or at any website, human errors of any
+    kind, or any combination thereof, including any injury or damage to
+    entrants' or any other persons' computers related to or resulting from
+    participation, uploading or downloading of any materials related to in this
+    Contest.
+  </li>
+  <li>
+    Except for any liability that cannot be excluded by applicable law, TCS
+    excludes all liability (including negligence), for any personal injury; or
+    any loss or damage; whether direct, indirect, special or consequential,
+    arising in any way in relation to the contest, including, but not limited
+    to, where arising out of the following: (a) any technical difficulties or
+    equipment malfunction (whether or not under TCS' control); (b) any theft,
+    unauthorized access or third party interference; (c) any tax liability
+    incurred by a contestant; or (d) use of the prize
+  </li>
+  <li>
+    TCS reserves the right, at its sole discretion, to cancel or terminate the
+    Contest, at any time it deems fit and proper. No claims or representations
+    shall be entertained in this regard.
+  </li>
+  <li>
+    TCS reserves the right to relax any of these restrictions if permitted by
+    law before the start of the qualification round.
+  </li>
+  <li>
+    All contestants must have access to the Internet, a valid postal address,
+    and a valid email address in order to enter the contest.
+  </li>
+  <li>
+    TCS reserves the right to verify eligibility and to adjudicate on any
+    dispute at any time. TCS will be the sole authority to decide the winners of
+    the contest and decision of TCS will be final and binding on all the
+    contestants.
+  </li>
+  <li>
+    TCS reserves the right to disqualify any contestant or entries or forfeit
+    any prize contestant is eligible to receive, where TCS reasonably (a)
+    suspects any unlawful or improper conduct, such as infringing a third
+    party's intellectual property rights, or (b) believes that contestant has
+    provided any false information for participation in the contest, attempted
+    or tampered or interfered with the administration of the contest or has
+    otherwise been a breach of these contest terms and conditions (c) submitting
+    content that violates any applicable law
+  </li>
+  <li>
+    By participating in the contest, participant/ contestant understand and
+    accepts that TCS may use the personal information provided by contestant
+    during registration and in any subsequent communications to administer the
+    contest. TCS may use, disclose or transfer the personal information of the
+    contestant for contest related purposes or activities, within a country or
+    overseas including inter-alia disclosing it to other organizations or third
+    parties that assist with the contest, displaying it on the website etc. TCS
+    will protect the personal information in accordance with applicable privacy
+    legislation and its privacy policy.
+  </li>
+  <li>
+    Except as required by law, TCS makes no warranties, express or implied in
+    connection with the contest
+  </li>
+  <li>
+    TCS shall not be liable in any way if the performance of obligations
+    hereunder is delayed or becomes impossible by reason of any Act of God, war,
+    fire, earthquake, strike, sickness, accident, civil commotion or any other
+    cause
+  </li>
+  <li>
+    The candidate must be at least eighteen (18) years old or the age of
+    majority in his/her country of residence (whichever is greater) at the time
+    of his/her initial registration for TCS CodeVita.
+  </li>
+  <li>
+    Contestant shall fully indemnify and hold TCS harmless for and against all
+    damages, losses, and costs that might be caused by: (1) Contestant's acts or
+    omissions in relation to the Contest (including use or acceptance of any
+    prize) (2) Contestant's failure to comply with the terms of the above
+    agreement
+  </li>
+  <li>
+    In case of discretionary decisions, those taken by the TCS will be final and
+    binding.
+  </li>
+  <li>
+    All communications between TCS and the contestant will only be in English.
+  </li>
+  <li>
+    By accepting a prize, the contestant agrees that TCS and its agents may use
+    the contestant's name/nickname/screen name, likeness and statements without
+    compensation to promote the Contest, including displaying it publicly on its
+    website. Contestant's name/nickname/screen name, will also be displayed
+    during the contest on its website.
+  </li>
+  <li>
+    The Contestant understands and agrees that nothing in these terms and
+    conditions, a submission into the Contest, or an award of a prize may be
+    construed as an offer or contract of employment with TCS.
+  </li>
+  <li>
+    The disputes or claims arising out of or relating to the contest will be
+    governed by and construed in accordance with the laws of Thailand and will
+    be subject to jurisdiction of the courts in Thailand.
+  </li>
+  <li>
+    The data submitted by a contestant at the time of registration can be
+    accessed by TCS for market research and analytics, contest promotions and
+    reach, without any disclosure of the contestant's personal data(PII), for
+    example - name, email id, etc. In cases of the contestant ranking among the
+    Top 3, he/she/they consent to TCS's use of PII including Name, Country,
+    Institute Name and photograph and inclusion in the Hall of Fame digital
+    album on the CodeVita site, located at codevita.tcsapps.com.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+</ul>
+        </div>
+        <div id="kc-terms-1_TandC" style="display:none;">
+<h2>
+  By entering the contest, each participant/ contestant confirms and agrees to
+  the following terms and conditions:
+</h2>
+<ul>
+  <li>
+    The candidate must be at least eighteen (18) years old or the age of
+    majority in his/her country of residence (whichever is greater) at the time
+    of his/her initial registration for TCS CodeVita
+  </li>
+  <li>
+    The participant/ contestant thereof acknowledges that the submission
+    submitted will be an original work created solely by him/her, and that the
+    submission does not infringe on copyrights, trademarks, moral rights, rights
+    of privacy/publicity or intellectual property rights of any person or
+    entity, and that no other party has any right, title, claim, or interest in
+    the submission.
+  </li>
+  <li>
+    The application must not contain content: 1) where any person(s) would be
+    required to undertake actions which are inappropriate, indecent, obscene,
+    violent, hateful, tortuous, defamatory, or slanderous; 2) that promotes
+    racism or hatred against any group or individual; 3) that promotes
+    discrimination based on race, sex, religion, nationality, disability, sexual
+    orientation or age; or 4) that is unlawful, in violation of, or contrary to,
+    the laws or regulations of the country, state, or province where the
+    application is developed.
+  </li>
+  <li>
+    The participant/contestant thereof is the sole author of the submission and
+    that it is the participant/ contestant's original work.
+  </li>
+  <li>
+    The participant/contestant has not licensed or disposed of any rights in the
+    submission that would conflict with any TCS use (if any).
+  </li>
+  <li>
+    Participants warrant that they are either the copyright owners of the
+    component parts of that submission or are posting the work under license
+    from a copyright owner or otherwise as permitted by law.
+  </li>
+  <li>
+    For the sole purpose of enabling TCS to make your submission available
+    through our portal you grant TCS a non-exclusive, royalty-free license to
+    reproduce, distribute, re-format, store, prepare derivative works based on,
+    and publicly display your content. You agree not to distribute any part of
+    the portal other than your content in any medium other than as permitted in
+    these Terms and Conditions.
+  </li>
+  <li>
+    Display or publication of any entry on a TCS website does not indicate the
+    entrant will be selected as a winner. TCS will not be required to pay any
+    additional consideration or seek any additional approval in connection with
+    such use.
+  </li>
+  <li>
+    By entering this Contest, all entrants agree to release, discharge, and hold
+    harmless TCS from any claims, losses, and damages arising out of their
+    participation in this Contest or any Contest-related activities. TCS assumes
+    no responsibility for any error, omission, interruption, deletion, defect,
+    or delay in operation or transmission; communications line failure; theft or
+    destruction of or unauthorized access to Contest entries or entry forms; or
+    alteration of entries or entry forms. TCS is not responsible for any
+    problems with or technical malfunction of any telephone network or lines,
+    computer online systems, servers or providers, computer equipment, software,
+    failure of any email entry to be received on account of technical problems
+    or traffic congestion on the Internet or at any website, human errors of any
+    kind, or any combination thereof, including any injury or damage to
+    entrants' or any other persons' computers related to or resulting from
+    participation, uploading or downloading of any materials related to in this
+    Contest.
+  </li>
+  <li>
+    TCS reserves the right, at its sole discretion, to cancel or terminate the
+    Contest, at any time it deems fit and proper. No claims or representations
+    shall be entertained in this regard.
+  </li>
+  <li>
+    TCS reserves the right to relax any of these restrictions if permitted by
+    law before the start of the Qualification Round.
+  </li>
+  <li>
+    All contestants must have access to the Internet, a valid postal address,
+    and a valid email address in order to enter the contest.
+  </li>
+  <li>
+    TCS reserves the right to verify eligibility and to adjudicate on any
+    dispute at any time. TCS will be the sole authority to decide the winners of
+    the contest and decision of TCS will be final and binding on all the
+    contestants.
+  </li>
+  <li>
+    The data submitted by a contestant at the time of registration can be
+    accessed by TCS for market research and analytics, contest promotions and
+    reach, without any disclosure of the contestant's personal data(PII), for
+    example - name, email id, etc. In cases of the contestant ranking among the
+    Top 3, he/she/they consent to TCS's use of PII including Name, Country,
+    Institute Name and photograph and inclusion in the Hall of Fame digital
+    album on the CodeVita site, located at codevita.tcsapps.com.
+  </li>
+  <li>
+    The contest involves algorithms that allows automated processing of results
+    that leads to the selection of participants post Round 1, Round 2 as per the
+    defined rules of the contest to arrive at the top 25-30 Finalists and then
+    eventually the top 3 winners.
+  </li>
+</ul>
+<h2>Indemnifications</h2>
+<ul>
+  <li>
+    You fully indemnify and hold Tata Consultancy Services Limited ("TCS")
+    harmless for and against all damages, losses, and costs that might be caused
+    by:
+  </li>
+  <li>Your failure to comply with the terms of the above agreement</li>
+  <li>Infringement of your materials or our use of those materials</li>
+
+  <li>
+    By clicking "I agree" you are certifying that you are at least eighteen (18)
+    years old or the age of majority in your country of residence (whichever is
+    greater) at the time of your initial registration for TCS CodeVita and that
+    you understand and agree to these terms.
+  </li>
+</ul>
+        </div>
+        
+        <!-- div for accept & decline -->
+        <center class="mt-4">
+            <input class="pf-c-button btn-lg btn btn-success" name="accept" id="kc-accept" onClick="acceptTnC();" type="button" value="Accept"   />
+            <input class="pf-c-button btn-lg btn btn-danger" name="cancel" id="kc-decline" onClick="declineTnC();" type="button" value="Decline" />
+        </center>
+    </div>
+
+    </div>
+  </div>
+</div>
+<!-- terms and condition popup end -->
+</body>
+</html>

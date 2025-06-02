@@ -38,29 +38,35 @@ public class AuthServiceImpl implements AuthService {
     public AuthResponse register(AuthRequest request) {
         log.info("Registering new user: {}", request.getUsername());
 
-        if (userRepository.existsByUsername(request.getUsername())) {
-            throw new RuntimeException("Username is already taken!");
+        try {
+            if (userRepository.existsByUsername(request.getUsername())) {
+                throw new RuntimeException("Username is already taken!");
+            }
+
+            if (userRepository.existsByEmail(request.getEmail())) {
+                throw new RuntimeException("Email is already in use!");
+            }
+
+            User user = new User();
+            user.setUsername(request.getUsername());
+            user.setEmail(request.getEmail());
+            user.setPassword(passwordEncoder.encode(request.getPassword()));
+            user.setDisplayName(request.getUsername());
+            user.setLastActive(LocalDateTime.now());
+
+            User savedUser = userRepository.saveAndFlush(user);
+            log.info("User saved successfully: {}", savedUser.getUsername());
+
+            // Create authentication token for auto-login
+            String jwt = tokenProvider.generateTokenForUser(savedUser);
+            UserDTO userDTO = userService.convertToDTO(savedUser, savedUser.getId());
+
+            return new AuthResponse(jwt, userDTO);
+
+        } catch (Exception e) {
+            log.error("Registration failed for user: {}", request.getUsername(), e);
+            throw new RuntimeException("Failed to create account: " + e.getMessage());
         }
-
-        if (userRepository.existsByEmail(request.getEmail())) {
-            throw new RuntimeException("Email is already in use!");
-        }
-
-        User user = new User();
-        user.setUsername(request.getUsername());
-        user.setEmail(request.getEmail());
-        user.setPassword(passwordEncoder.encode(request.getPassword()));
-        user.setDisplayName(request.getUsername());
-        user.setLastActive(LocalDateTime.now());
-
-        User savedUser = userRepository.save(user);
-        log.info("User saved successfully: {}", savedUser.getUsername());
-
-        // Create authentication token for auto-login
-        String jwt = tokenProvider.generateTokenForUser(savedUser);
-        UserDTO userDTO = userService.convertToDTO(savedUser, savedUser.getId());
-
-        return new AuthResponse(jwt, userDTO);
     }
 
     @Override
