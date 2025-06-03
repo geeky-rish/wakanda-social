@@ -80,24 +80,11 @@
 - **Exception Handling**: Centralized via `GlobalExceptionHandler`
 
 ---
+## 🧪 Running the App
 
-## 👥 Team Wakanda
-
-| Name                 | Role                    |
-|----------------------|-------------------------|
-| Rishi Suryawanshi    | Lead Developer (Spring Boot) |
-| [Team Member 2]      | Security & Auth Engineer |
-| [Team Member 3]      | DTO & Exception Handling |
-| [Team Member 4]      | Testing & Documentation |
-
-> ⚡ *Built as a semester project to demonstrate real-world OOP, architecture, and software design.*
-
----
-
-## 📸 UI/UX (Optional)
-
-> A frontend using React or Angular can consume these APIs and apply Wakandan-inspired dark UI.
-
----
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/geeky-rish/wakanda-socia.git
+   cd wakanda-social
 
 
